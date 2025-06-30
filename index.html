@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="./images/LogoTheMelisseDesign.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>TheMelisseDesign | Tokyo-Based Web Design & Brand Identity Studio </title>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F64T53Y9JN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-F64T53Y9JN');
+    </script>
+    
+    <!-- Usercentrics Cookie Management Scripts - Commented out for local development -->
+    <!-- Uncomment these for production deployment on whitelisted domains -->
+    <!-- <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script> -->
+    <!-- <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="0n3u9ZRPJIMdQ0" async></script> -->
+    
+    <!-- Updated Spline viewer loading with version 1.10.14 -->
+    <link rel="preload" href="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js" as="script">
+    <link rel="modulepreload" href="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js"></script>
+    
+    <!-- Performance optimizations -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Preconnect to external domains for better performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com">
+    <link rel="preconnect" href="https://prod.spline.design">
+    <link rel="preconnect" href="https://unpkg.com">
+    
+    <!-- DNS prefetch for additional performance -->
+    <link rel="dns-prefetch" href="https://prod.spline.design">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>
