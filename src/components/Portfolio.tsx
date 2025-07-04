@@ -47,24 +47,32 @@ const Portfolio: React.FC = () => {
 
   // Optimized scroll-based animation with better performance
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      if (!portfolioRef.current) return;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          if (!portfolioRef.current) return;
 
-      const projectCards = portfolioRef.current.querySelectorAll('.project-card');
-      const newVisibleProjects: boolean[] = [];
+          const projectCards = portfolioRef.current.querySelectorAll('.project-card');
+          const newVisibleProjects: boolean[] = [];
 
-      projectCards.forEach((card, index) => {
-        const rect = card.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // More generous trigger point for smoother mobile experience
-        const triggerPoint = windowHeight * 0.85;
-        const isVisible = rect.top < triggerPoint && rect.bottom > 0;
-        
-        newVisibleProjects[index] = isVisible;
-      });
+          projectCards.forEach((card, index) => {
+            const rect = card.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            // More generous trigger point for smoother mobile experience
+            const triggerPoint = windowHeight * 0.85;
+            const isVisible = rect.top < triggerPoint && rect.bottom > 0;
+            
+            newVisibleProjects[index] = isVisible;
+          });
 
-      setVisibleProjects(newVisibleProjects);
+          setVisibleProjects(newVisibleProjects);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     // Use passive listener for better scroll performance
@@ -76,32 +84,61 @@ const Portfolio: React.FC = () => {
     };
   }, []);
 
-  // Preload images for smoother transitions
+  // Enhanced progressive image loading
   useEffect(() => {
-    projects.forEach((project, index) => {
-      const img1 = new Image();
-      const img2 = new Image();
-      let loadedCount = 0;
+    const loadImagesProgressively = async () => {
+      for (let i = 0; i < projects.length; i++) {
+        const project = projects[i];
+        
+        try {
+          // Load images with priority for first two projects
+          const priority = i < 2 ? 'high' : 'low';
+          
+          await Promise.all([
+            new Promise<void>((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve();
+              img.onerror = () => resolve(); // Continue even if image fails
+              img.src = project.image;
+              if (priority === 'high') {
+                img.fetchPriority = 'high';
+              }
+            }),
+            new Promise<void>((resolve) => {
+              const img = new Image();
+              img.onload = () => resolve();
+              img.onerror = () => resolve();
+              img.src = project.hoverImage;
+              if (priority === 'high') {
+                img.fetchPriority = 'high';
+              }
+            })
+          ]);
 
-      const handleImageLoad = () => {
-        loadedCount++;
-        if (loadedCount === 2) {
+          // Mark this project's images as loaded
           setImagesLoaded(prev => {
             const newState = [...prev];
-            newState[index] = true;
+            newState[i] = true;
+            return newState;
+          });
+
+          // Add small delay between loading different projects for better performance
+          if (i < projects.length - 1) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+          }
+        } catch (error) {
+          console.warn(`Failed to load images for project ${i}:`, error);
+          // Mark as loaded even if failed to prevent infinite loading
+          setImagesLoaded(prev => {
+            const newState = [...prev];
+            newState[i] = true;
             return newState;
           });
         }
-      };
+      }
+    };
 
-      img1.onload = handleImageLoad;
-      img2.onload = handleImageLoad;
-      img1.onerror = handleImageLoad; // Still mark as "loaded" even if error
-      img2.onerror = handleImageLoad;
-
-      img1.src = project.image;
-      img2.src = project.hoverImage;
-    });
+    loadImagesProgressively();
   }, [projects]);
 
   const handleProjectClick = (projectId: string) => {
@@ -114,7 +151,7 @@ const Portfolio: React.FC = () => {
     <section 
       ref={portfolioRef}
       id="portfolio" 
-      className="py-12 md:py-16 lg:py-20 bg-white"
+      className="py-12 md:py-16 lg:py-20 bg-white content-section"
       style={{
         // Enable hardware acceleration for smoother scrolling
         transform: 'translateZ(0)',
@@ -132,7 +169,7 @@ const Portfolio: React.FC = () => {
             </div>
           </div>
 
-          {/* Fixed Grid Layout with Consistent Aspect Ratios */}
+          {/* Enhanced Grid Layout with Performance Optimizations */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10">
             {projects.map((project, index) => {
               const isVisible = visibleProjects[index];
@@ -142,7 +179,7 @@ const Portfolio: React.FC = () => {
                 <div
                   key={project.id}
                   onClick={() => handleProjectClick(project.id)}
-                  className={`project-card group relative cursor-pointer transition-all duration-700 ease-out ${
+                  className={`project-card group relative cursor-pointer transition-all duration-700 ease-out optimized-animation ${
                     isVisible 
                       ? 'opacity-100 translate-y-0 scale-100' 
                       : 'opacity-0 translate-y-8 scale-95'
@@ -158,32 +195,34 @@ const Portfolio: React.FC = () => {
                   <div className="relative w-full" style={{ paddingBottom: '75%' }}> {/* 4:3 aspect ratio */}
                     <div className="absolute inset-0 rounded-xl md:rounded-2xl overflow-hidden bg-gray-100">
                       
-                      {/* Loading placeholder */}
+                      {/* Enhanced loading placeholder with skeleton effect */}
                       {!isImageLoaded && (
-                        <div className="absolute inset-0 bg-gray-100 animate-pulse flex items-center justify-center z-10">
+                        <div className="absolute inset-0 skeleton-loading flex items-center justify-center z-10">
                           <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
                         </div>
                       )}
                       
-                      {/* Default Image with consistent object-fit */}
+                      {/* Default Image with optimized loading */}
                       <img
                         src={project.image}
                         alt={project.title}
                         className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:opacity-0 group-hover:scale-105 ${
                           isImageLoaded ? 'opacity-100' : 'opacity-0'
                         }`}
-                        loading="lazy"
+                        loading={index < 2 ? "eager" : "lazy"} // Load first 2 images eagerly
                         decoding="async"
+                        fetchPriority={index < 2 ? "high" : "auto"}
                         style={{
                           // Optimize image rendering and ensure consistent sizing
                           imageRendering: 'auto',
                           backfaceVisibility: 'hidden',
                           transform: 'translateZ(0)',
-                          objectPosition: 'center center'
+                          objectPosition: 'center center',
+                          contentVisibility: 'auto'
                         }}
                       />
                       
-                      {/* Hover Image with consistent object-fit */}
+                      {/* Hover Image with optimized loading */}
                       <img
                         src={project.hoverImage}
                         alt={`${project.title} - Alternative view`}
@@ -197,7 +236,8 @@ const Portfolio: React.FC = () => {
                           imageRendering: 'auto',
                           backfaceVisibility: 'hidden',
                           transform: 'translateZ(0) scale(1.05)',
-                          objectPosition: 'center center'
+                          objectPosition: 'center center',
+                          contentVisibility: 'auto'
                         }}
                       />
 

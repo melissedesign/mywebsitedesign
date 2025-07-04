@@ -20,8 +20,30 @@
     <!-- <script src="https://web.cmp.usercentrics.eu/modules/autoblocker.js"></script> -->
     <!-- <script id="usercentrics-cmp" src="https://web.cmp.usercentrics.eu/ui/loader.js" data-settings-id="0n3u9ZRPJIMdQ0" async></script> -->
     
-    <!-- Updated Spline viewer loading with version 1.10.14 -->
-    <link rel="preload" href="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js" as="script">
+    <!-- Critical CSS inlined for faster initial render -->
+    <style>
+      /* Critical above-the-fold styles */
+      body { margin: 0; font-family: Inter, system-ui, sans-serif; }
+      .preloader { position: fixed; inset: 0; z-index: 9999; background: white; display: flex; align-items: center; justify-content: center; }
+      .hero-section { min-height: 100vh; position: relative; overflow: hidden; }
+      .loading-placeholder { background: #f3f4f6; animate-pulse; }
+    </style>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./src/index.css" as="style">
+    <link rel="preload" href="./src/main.tsx" as="script">
+    
+    <!-- Preload hero images for faster LCP -->
+    <link rel="preload" href="./images/webdesignsolutions.jpg" as="image" media="(min-width: 768px)">
+    <link rel="preload" href="./images/brandingandcommunicationsolutions.jpg" as="image" media="(min-width: 768px)">
+    
+    <!-- Preload key fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Optimized Spline viewer loading with version 1.10.14 -->
     <link rel="modulepreload" href="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js">
     <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.14/build/spline-viewer.js"></script>
     
@@ -33,15 +55,19 @@
     <meta name="format-detection" content="telephone=no">
     
     <!-- Preconnect to external domains for better performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://res.cloudinary.com">
     <link rel="preconnect" href="https://prod.spline.design">
     <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cal.com">
+    <link rel="preconnect" href="https://embed.cal.com">
     
     <!-- DNS prefetch for additional performance -->
     <link rel="dns-prefetch" href="https://prod.spline.design">
     <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://formspree.io">
+    
+    <!-- Resource hints for better loading -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
   </head>
   <body>
     <div id="root"></div>

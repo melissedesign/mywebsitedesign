@@ -4,6 +4,7 @@ const PhotoCarousel: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentImageIndices, setCurrentImageIndices] = useState([0, 1, 2, 3]);
   const [isPaused, setIsPaused] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -32,6 +33,40 @@ const PhotoCarousel: React.FC = () => {
     '/images/usbsublee.png',
     '/images/digitalcompanyprintbook.png'
   ];
+
+  // Progressive image loading
+  useEffect(() => {
+    const loadImages = async () => {
+      const loadPromises = allImages.map((src, index) => {
+        return new Promise<void>((resolve) => {
+          const img = new Image();
+          img.onload = () => {
+            setImagesLoaded(prev => {
+              const newState = [...prev];
+              newState[index] = true;
+              return newState;
+            });
+            resolve();
+          };
+          img.onerror = () => {
+            console.warn(`Failed to load image: ${src}`);
+            resolve(); // Continue even if image fails
+          };
+          img.src = src;
+        });
+      });
+
+      // Load images progressively with small delays
+      for (let i = 0; i < loadPromises.length; i++) {
+        await loadPromises[i];
+        if (i < loadPromises.length - 1) {
+          await new Promise(resolve => setTimeout(resolve, 50));
+        }
+      }
+    };
+
+    loadImages();
+  }, [allImages]);
 
   // Auto-advance slideshow every 7 seconds for more elegant pacing
   useEffect(() => {
@@ -86,10 +121,10 @@ const PhotoCarousel: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-16 bg-white">
+    <section ref={sectionRef} className="py-16 bg-white content-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* Clean 2x2 Grid Layout - No text, no dots */}
+          {/* Clean 2x2 Grid Layout - Enhanced with loading states */}
           <div 
             className="grid grid-cols-2 gap-3 md:gap-4 h-[400px] md:h-[500px]"
             onMouseEnter={handleMouseEnter}
@@ -98,6 +133,8 @@ const PhotoCarousel: React.FC = () => {
             
             {currentImageIndices.map((imageIndex, gridIndex) => {
               const imageUrl = allImages[imageIndex];
+              const isImageLoaded = imagesLoaded[imageIndex];
+              
               return (
                 <div
                   key={`${gridIndex}-${imageIndex}`}
@@ -110,13 +147,28 @@ const PhotoCarousel: React.FC = () => {
                     transitionDelay: isVisible ? `${gridIndex * 200}ms` : '0ms'
                   }}
                 >
+                  {/* Enhanced loading placeholder */}
+                  {!isImageLoaded && (
+                    <div className="absolute inset-0 skeleton-loading flex items-center justify-center z-10">
+                      <div className="w-6 h-6 border-2 border-gray-300 border-t-gray-600 rounded-full animate-spin"></div>
+                    </div>
+                  )}
+
                   {/* Gentle floating animation */}
                   <div className="w-full h-full animate-gentle-float" style={{ animationDelay: `${gridIndex * 2}s` }}>
                     <img
                       src={imageUrl}
                       alt={`Project ${gridIndex + 1}`}
-                      className="w-full h-full object-cover transition-all duration-[2000ms] ease-out group-hover:scale-105 group-hover:brightness-105"
+                      className={`w-full h-full object-cover transition-all duration-[2000ms] ease-out group-hover:scale-105 group-hover:brightness-105 ${
+                        isImageLoaded ? 'opacity-100' : 'opacity-0'
+                      }`}
                       loading="lazy"
+                      decoding="async"
+                      style={{
+                        contentVisibility: 'auto',
+                        backfaceVisibility: 'hidden',
+                        transform: 'translateZ(0)'
+                      }}
                       onError={(e) => {
                         console.log(`Failed to load image: ${imageUrl}`);
                         // Fallback to a placeholder or hide the image

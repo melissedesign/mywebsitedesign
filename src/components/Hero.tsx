@@ -15,32 +15,39 @@ const Hero: React.FC = () => {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
   };
 
-  // Handle Spline loading with mobile optimization
+  // Enhanced Spline loading with better performance and error handling
   useEffect(() => {
     const loadSpline = async () => {
       try {
-        // Add a small delay to ensure DOM is ready
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // Check if device can handle Spline
+        const isMobile = window.innerWidth < 768;
+        const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4;
+        
+        // Skip Spline on very low-end devices
+        if (isLowEndDevice && isMobile) {
+          setSplineError(true);
+          return;
+        }
+
+        // Add a delay to ensure DOM is ready and prioritize other content
+        await new Promise(resolve => setTimeout(resolve, 1000));
         
         if (splineRef.current) {
           setSplineLoaded(true);
           
           // Mobile-specific optimizations
-          const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-          
           if (isMobile) {
-            // Apply mobile-specific settings to Spline viewer
             const splineViewer = splineRef.current as any;
             
             // Set mobile-optimized properties
             if (splineViewer.setQuality) {
-              splineViewer.setQuality('low'); // Use low quality for mobile
+              splineViewer.setQuality('low');
             }
             if (splineViewer.setFPS) {
-              splineViewer.setFPS(24); // Limit FPS for better performance
+              splineViewer.setFPS(24);
             }
             if (splineViewer.setPixelRatio) {
-              splineViewer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Limit pixel ratio
+              splineViewer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
             }
           }
         }
@@ -51,7 +58,12 @@ const Hero: React.FC = () => {
       }
     };
 
-    loadSpline();
+    // Use requestIdleCallback for better performance
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(loadSpline);
+    } else {
+      setTimeout(loadSpline, 2000);
+    }
   }, []);
 
   // Animate between "Convert" and "Connect" every 3.5 seconds
@@ -84,11 +96,11 @@ const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-[100dvh] w-screen overflow-hidden">
-      {/* Spline Background - Interactive 3D visual */}
+      {/* Enhanced Background with better fallback */}
       <div className="absolute inset-0">
         {!splineError ? (
           <>
-            {/* Spline viewer with your working URL */}
+            {/* Spline viewer with optimized loading */}
             <spline-viewer 
               ref={splineRef}
               url="https://prod.spline.design/tBgPwAdCq0lkbyOY/scene.splinecode"
@@ -99,11 +111,12 @@ const Hero: React.FC = () => {
               style={{
                 width: '100%',
                 height: '100%',
-                background: 'transparent'
+                background: 'transparent',
+                willChange: 'transform'
               }}
             />
             
-            {/* Loading overlay */}
+            {/* Enhanced loading overlay */}
             {!splineLoaded && (
               <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 flex items-center justify-center z-10">
                 <div className="flex flex-col items-center space-y-4">
@@ -114,17 +127,17 @@ const Hero: React.FC = () => {
             )}
           </>
         ) : (
-          // Fallback background if Spline fails to load
+          // Enhanced fallback background with better visual appeal
           <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-            {/* Animated background elements as fallback */}
-            <div className="absolute inset-0 opacity-30">
+            {/* Optimized animated background elements */}
+            <div className="absolute inset-0 opacity-20">
               <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-3xl animate-pulse-gentle"></div>
               <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '1.5s' }}></div>
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '3s' }}></div>
             </div>
             
-            {/* Subtle geometric patterns */}
-            <div className="absolute inset-0 opacity-10">
+            {/* Optimized geometric patterns */}
+            <div className="absolute inset-0 opacity-5">
               <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <defs>
                   <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
@@ -138,12 +151,12 @@ const Hero: React.FC = () => {
         )}
       </div>
 
-      {/* Content overlay */}
+      {/* Content overlay with optimized rendering */}
       <div className="relative z-20 flex items-center justify-center min-h-[100dvh] w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center">
             <div className="max-w-5xl mx-auto space-y-4 md:space-y-6">
-              {/* Elegant Main Title - Using Work Sans for refined, clean aesthetic */}
+              {/* Optimized Main Title with better font loading */}
               <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-tight font-hero">
                 <span className="text-black font-light">Grow. Engage. </span>
                 <span 
@@ -155,14 +168,14 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
 
-              {/* Refined Subheading - Softer color and elegant typography */}
+              {/* Optimized Subheading */}
               <div className="max-w-4xl mx-auto">
                 <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 leading-relaxed font-hero-alt font-light">
                   Attract clients by elevating your brand.
                 </p>
               </div>
 
-              {/* CTA Button with refined spacing */}
+              {/* CTA Button with optimized interaction */}
               <div className="pt-6 md:pt-8">
                 <div className="bg-white border border-[#FBEAEA] rounded-full px-2 py-1 shadow-sm inline-block">
                   <HashLink

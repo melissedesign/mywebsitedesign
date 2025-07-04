@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Import premium typography fonts for refined, elegant aesthetic */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-/* Add Neue Haas Grotesk inspired fonts for luxury feel */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-/* Import elegant fonts for hero section */
-@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@200;300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700;800;900&display=swap');
+/* Import only essential fonts for faster loading */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap');
 
 /* Enable smooth scrolling with optimized performance */
 html {
@@ -48,6 +39,25 @@ html, body {
   perspective: 1000;
 }
 
+/* Enhanced image loading optimization */
+img {
+  /* Optimize image rendering */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  /* Enable hardware acceleration */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  /* Improve loading performance */
+  will-change: auto;
+}
+
+/* Lazy loading enhancement */
+img[loading="lazy"] {
+  /* Optimize lazy loaded images */
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 200px;
+}
+
 /* Smooth scroll container optimization */
 .smooth-scroll {
   -webkit-overflow-scrolling: touch;
@@ -61,9 +71,11 @@ html, body {
   transform: translateZ(0);
   /* Optimize for animations */
   will-change: transform;
+  /* Improve rendering performance */
+  contain: layout style paint;
 }
 
-/* Project card optimizations for smoother animations and consistent sizing */
+/* Enhanced project card optimizations */
 .project-card {
   /* Enable hardware acceleration */
   -webkit-transform: translateZ(0);
@@ -73,6 +85,8 @@ html, body {
   /* Improve image rendering */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  /* Optimize rendering */
+  contain: layout style paint;
 }
 
 .project-card img {
@@ -90,6 +104,24 @@ html, body {
   /* Prevent image distortion */
   width: 100%;
   height: 100%;
+  /* Optimize loading */
+  content-visibility: auto;
+}
+
+/* Enhanced skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
 }
 
 /* Ensure consistent aspect ratios for all portfolio images */
@@ -99,6 +131,8 @@ html, body {
   padding-bottom: 75%; /* 4:3 aspect ratio */
   overflow: hidden;
   border-radius: 0.75rem; /* rounded-xl */
+  /* Optimize rendering */
+  contain: layout style paint;
 }
 
 @media (min-width: 768px) {
@@ -281,7 +315,7 @@ body.modal-open {
   width: 100% !important;
 }
 
-/* OPTIMIZED SPLINE VIEWER STYLES - NOW WORKS ON ALL DEVICES */
+/* OPTIMIZED SPLINE VIEWER STYLES - Enhanced Performance */
 spline-viewer {
   /* Performance optimizations */
   will-change: transform;
@@ -308,6 +342,9 @@ spline-viewer {
   
   /* Enable interaction on all devices */
   pointer-events: all !important;
+  
+  /* Optimize rendering */
+  contain: layout style paint;
 }
 
 /* Hide all Spline branding elements */
@@ -345,6 +382,8 @@ spline-viewer::part(canvas) {
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  /* Optimize rendering */
+  contain: layout style paint;
 }
 
 /* Mobile-specific optimizations for Spline */
@@ -496,6 +535,20 @@ spline-viewer::part(canvas) {
   .testimonial-carousel {
     touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Performance optimizations for content visibility */
+.content-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* Optimize animations for better performance */
+@media (prefers-reduced-motion: no-preference) {
+  .optimized-animation {
+    will-change: transform, opacity;
+    transform: translateZ(0);
   }
 }
 

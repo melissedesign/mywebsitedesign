@@ -9,7 +9,7 @@ const Preloader: React.FC = () => {
     const hasVisited = localStorage.getItem('hasVisited');
     
     if (hasVisited) {
-      // Skip preloader for returning users
+      // Skip preloader for returning users to improve performance
       setIsVisible(false);
       return;
     }
@@ -20,12 +20,12 @@ const Preloader: React.FC = () => {
     // Start the fill animation after a brief delay
     const fillTimer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 800);
+    }, 600); // Reduced from 800ms for faster loading
 
     // Hide preloader after animation completes
     const hideTimer = setTimeout(() => {
       setIsVisible(false);
-    }, 3200); // 800ms delay + 2000ms fill + 400ms fade out
+    }, 2800); // Reduced from 3200ms for faster loading
 
     return () => {
       clearTimeout(fillTimer);
@@ -37,21 +37,23 @@ const Preloader: React.FC = () => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-400 ${
+      className={`fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-300 ${
         animationComplete ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       style={{
-        transitionDelay: animationComplete ? '2000ms' : '0ms'
+        transitionDelay: animationComplete ? '1800ms' : '0ms' // Reduced delay
       }}
     >
       <div className="relative">
-        {/* Logo container with animation */}
+        {/* Logo container with optimized animation */}
         <div className="w-32 h-32 md:w-40 md:h-40 relative">
           {/* Background logo (outline) */}
           <img
-            src="https://res.cloudinary.com/dzvgatvfg/image/upload/v1749460776/TheMelisseDesign_Website_qytc64.png"
+            src="/images/logothemelissedesign.png"
             alt="TheMelisseDesign Logo"
             className="w-full h-full object-contain opacity-20"
+            loading="eager"
+            decoding="sync"
           />
           
           {/* Filling logo with mask animation */}
@@ -61,18 +63,20 @@ const Preloader: React.FC = () => {
               clipPath: animationComplete 
                 ? 'inset(0 0 0 0)' 
                 : 'inset(0 100% 0 0)',
-              transition: 'clip-path 2000ms cubic-bezier(0.4, 0, 0.2, 1)'
+              transition: 'clip-path 1800ms cubic-bezier(0.4, 0, 0.2, 1)' // Reduced from 2000ms
             }}
           >
             <img
-              src="https://res.cloudinary.com/dzvgatvfg/image/upload/v1749460776/TheMelisseDesign_Website_qytc64.png"
+              src="/images/logothemelissedesign.png"
               alt="TheMelisseDesign Logo"
               className="w-full h-full object-contain"
+              loading="eager"
+              decoding="sync"
             />
           </div>
         </div>
 
-        {/* Subtle loading indicator */}
+        {/* Optimized loading indicator */}
         <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
           <div className="flex space-x-1">
             <div 
