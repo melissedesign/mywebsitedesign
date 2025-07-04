@@ -11,9 +11,9 @@ const PhotoCarousel: React.FC = () => {
   const allImages = [
     // ABISS project visuals
     '/images/webdesignforabisstokyo.png',
-    '/images/BrandingDesignandLogoforabiss.png',
+    '/images/brandingdesignandlogoforabiss.png',
     '/images/abissmockup.png',
-    '/images/BagDesignAbiss.png',
+    '/images/bagdesignabiss.png',
     
     // Linven project visuals
     '/images/taglinvenprintdesign.png',
@@ -22,13 +22,13 @@ const PhotoCarousel: React.FC = () => {
     '/images/linvenlogodesign.png',
     
     // KōLegal project visuals
-    '/images/japaneselawfirm.png',
+    '/images/japaneselawfirmpng.png',
     '/images/kolegalprintdesign.png',
     '/images/kolegallogodesign.png',
     
     // SUBLEE2 project visuals - Updated paths
     '/images/subleelogodesign.png',
-    '/images/itcompanyeventpass.png',
+    '/images/iicompanyeventpass.png',
     '/images/usbsublee.png',
     '/images/digitalcompanyprintbook.png'
   ];

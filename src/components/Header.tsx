@@ -86,7 +86,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo - Updated to use new logo */}
+            {/* Logo - Updated to use new logo filename */}
             <HashLink to="/#" className="flex items-center">
               <img
                 src="/images/logothemelissedesign.png"

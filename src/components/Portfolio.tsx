@@ -27,7 +27,7 @@ const Portfolio: React.FC = () => {
       id: 'kolegal',
       title: 'KōLegal',
       categories: ['Brand Identity', 'Print Design'],
-      image: '/images/japaneselawfirm.png',
+      image: '/images/japaneselawfirmpng.png',
       hoverImage: '/images/kolegalprintdesign.png',
     },
     {
@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
       title: 'SUBLEE2',
       categories: ['Brand Identity', 'UX/UI Design'],
       image: '/images/subleelogodesign.png',
-      hoverImage: '/images/itcompanyeventpass.png',
+      hoverImage: '/images/iicompanyeventpass.png',
     }
   ];
 

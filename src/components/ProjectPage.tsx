@@ -141,10 +141,10 @@ const ProjectPage: React.FC = () => {
       },
       images: [
         '/images/abissmockup.png',
-        '/images/BagDesignAbiss.png',
+        '/images/bagdesignabiss.png',
         '/images/logodesignabiss.png',
         '/images/webdesignforabisstokyo.png',
-        '/images/BrandingDesignandLogoforabiss.png'
+        '/images/brandingdesignandlogoforabiss.png'
       ]
     },
     {
@@ -166,7 +166,7 @@ const ProjectPage: React.FC = () => {
       // Keep the original two-line layout for desktop compatibility
       heroTextLines: ['KōLegal, a modern', 'Japanese law firm.'],
       images: [
-        '/images/japaneselawfirm.png',
+        '/images/japaneselawfirmpng.png',
         '/images/kolegalprintdesign.png',
         '/images/kolegallogodesign.png'
       ]
@@ -190,7 +190,7 @@ const ProjectPage: React.FC = () => {
       },
       images: [
         '/images/subleelogodesign.png',
-        '/images/itcompanyeventpass.png',
+        '/images/iicompanyeventpass.png',
         '/images/usbsublee.png',
         '/images/digitalcompanyprintbook.png'
       ]

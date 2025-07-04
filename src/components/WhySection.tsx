@@ -5,19 +5,19 @@ const WhySection: React.FC = () => {
   const orbitalImages = [
     // ABISS project - 2 key visuals
     '/images/webdesignforabisstokyo.png',
-    '/images/BrandingDesignandLogoforabiss.png',
+    '/images/brandingdesignandlogoforabiss.png',
     
     // Linven project - 2 key visuals
     '/images/taglinvenprintdesign.png',
     '/images/linvenvisual.png',
     
     // KōLegal project - 2 key visuals
-    '/images/japaneselawfirm.png',
+    '/images/japaneselawfirmpng.png',
     '/images/kolegallogodesign.png',
     
     // SUBLEE2 project - 2 key visuals
     '/images/subleelogodesign.png',
-    '/images/itcompanyeventpass.png'
+    '/images/iicompanyeventpass.png'
   ];
 
   return (
@@ -49,7 +49,7 @@ const WhySection: React.FC = () => {
               <div className="h-[65%] relative">
                 <img
                   src="/images/collaborationfreelanceintokyo.png"
-                  alt="Seamless collaboration - Two hands reaching toward each other"
+                  alt="collaborationfreelanceintokyo.png"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

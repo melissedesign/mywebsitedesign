@@ -36,10 +36,10 @@ const GetInTouch: React.FC = () => {
           {/* Discovery Call Section - Full Width and Centered */}
           <div className="max-w-5xl mx-auto">
             <div className="bg-white rounded-2xl p-6 md:p-8 lg:p-10 shadow-sm border border-gray-100">
-              {/* Profile Image - Fixed to use correct filename */}
+              {/* Profile Image - Updated to use new filename */}
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto mb-6 md:mb-8 border-4 border-[#FBEAEA]">
                 <img
-                  src="/images/MelisseWebDesigner.jpg"
+                  src="/images/melissewebdesigner.png"
                   alt="Melisse"
                   className="w-full h-full object-cover"
                   loading="eager"

@@ -189,7 +189,7 @@ const WebDesignPage: React.FC = () => {
     {
       title: 'KōLegal',
       category: 'Law Firm',
-      image: '/images/japaneselawfirm.png'
+      image: '/images/japaneselawfirmpng.png'
     }
   ];
 
