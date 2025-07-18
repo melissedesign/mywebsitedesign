@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           <div className="flex justify-center mb-4">
             <img
               src="/images/logothemelissedesign.png"
-              alt="TheMelisseDesign Logo"
+              alt="logothemelissedesign.png"
               className="h-10 md:h-12 w-auto object-contain"
             />
           </div>
