@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
             <HashLink to="/#" className="flex items-center">
               <img
                 src="/images/logothemelissedesign.png"
-                alt="TheMelisseDesign Logo"
+                alt="logothemelissedesign.png"
                 className={`h-12 md:h-16 w-auto object-contain transition-all duration-300 ${
                   useWhiteTheme ? 'filter brightness-0 invert' : ''
                 }`}
