@@ -74,16 +74,18 @@ const About: React.FC = () => {
           </div>
 
           <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 mb-12 md:mb-16">
-            {/* Profile Image - Updated to use new filename */}
+            {/* Profile Image - Optimized with Cloudinary CDN */}
             <div className="w-full lg:w-1/3">
               <div className="relative max-w-[280px] md:max-w-[320px] mx-auto lg:max-w-none mb-8 md:mb-0">
                 {/* Rounded rectangle container matching "Modern websites" style */}
                 <div className="aspect-[4/5] overflow-hidden rounded-[32px] shadow-lg">
                   <img
-                    src="/images/melissewebdesigner.png"
+                    src="/images/MelisseWebDesigner.jpg"
                     alt="Profile"
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
+                    fetchPriority="high"
                   />
                 </div>
                 {/* Subtle border overlay for depth */}
