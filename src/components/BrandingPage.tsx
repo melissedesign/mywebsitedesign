@@ -204,7 +204,7 @@ const BrandingPage: React.FC = () => {
     {
       title: 'KōLegal',
       category: 'Law Firm',
-      image: '/images/japaneselawfirmpng.png'
+      image: '/images/japaneselawfirm.png'
     }
   ];
 
