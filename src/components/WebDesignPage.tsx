@@ -179,17 +179,17 @@ const WebDesignPage: React.FC = () => {
     {
       title: 'ABISS',
       category: 'Sustainable Skincare',
-      image: '/images/webdesignforabisstokyo.png'
+      image: '/images/Abiss/abisswebdesign.png'
     },
     {
       title: 'Linven',
       category: 'Luxury Bedding Brand',
-      image: '/images/taglinvenprintdesign.png'
+      image: '/images/Linven/taglinvenprintdesign.png'
     },
     {
       title: 'KōLegal',
       category: 'Law Firm',
-      image: '/images/japaneselawfirmpng.png'
+      image: '/images/KoLegal/kolegallogodesign.png'
     }
   ];
 

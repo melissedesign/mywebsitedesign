@@ -9,21 +9,21 @@ const PhotoCarousel: React.FC = () => {
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const allImages = [
-    '/images/webdesignforabisstokyo.png',
-    '/images/brandingdesignandlogoforabiss.png',
-    '/images/abissmockup.png',
-    '/images/bagdesignabiss.png',
-    '/images/taglinvenprintdesign.png',
-    '/images/linvenvisual.png',
-    '/images/businesscardlinven.png',
-    '/images/linvenlogodesign.png',
-    '/images/japaneselawfirmpng.png',
-    '/images/kolegalprintdesign.png',
-    '/images/kolegallogodesign.png',
-    '/images/subleelogodesign.png',
-    '/images/iicompanyeventpass.png',
-    '/images/usbsublee.png',
-    '/images/digitalcompanyprintbook.png'
+    '/images/Abiss/abisswebdesign.png',
+    '/images/Abiss/abisslogodesign.png',
+    '/images/Abiss/abisspackagingdesign.png',
+    '/images/Abiss/abissbagdesign.png',
+    '/images/Linven/taglinvenprintdesign.png',
+    '/images/Linven/linvenvisual.png',
+    '/images/Linven/linvenbusinesscard.png',
+    '/images/Linven/linvenlogodesign.png',
+    '/images/KoLegal/kolegallogodesign.png',
+    '/images/KoLegal/kolegalprintdesign.png',
+    '/images/KoLegal/kolegalbusinesscard.png',
+    '/images/Sublee/subleelogodesign.png',
+    '/images/Sublee/subleeeventpass.png',
+    '/images/Sublee/subleeusbdesign.png',
+    '/images/Sublee/subleeprintdesign.png'
   ];
 
   useEffect(() => {

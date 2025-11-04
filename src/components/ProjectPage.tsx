@@ -108,7 +108,7 @@ const ProjectPage: React.FC = () => {
       solution: 'I created the entire visual identity: logo, color palette, typography, and print materials like business cards and product tags. Once the brand look was defined, I designed and built a responsive website that highlighted the textures, quality, and lifestyle behind the brand. All while ensuring a smooth and intuitive user experience.',
       results: 'The branding and website gave Linven a clear and consistent identity. The design reflects the brand\'s values and offers a smooth and elegant experience for users.',
       technologies: ['UX/UI Design', 'Responsive Web Design', 'Cloudinary', 'HTML/CSS', 'Adobe Creative Cloud'],
-      heroImage: '/images/linvenherosectionmin.png',
+      heroImage: '/images/Linven/linvenvisual.png',
       heroText: 'Linven, a Mediterranean-inspired bedding brand.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
@@ -117,10 +117,10 @@ const ProjectPage: React.FC = () => {
         line3: 'Bedding Brand'
       },
       images: [
-        '/images/taglinvenprintdesign.png',
-        '/images/linvenvisual.png',
-        '/images/businesscardlinven.png',
-        '/images/linvenlogodesign.png',
+        '/images/Linven/taglinvenprintdesign.png',
+        '/images/Linven/linvenvisual.png',
+        '/images/Linven/linvenbusinesscard.png',
+        '/images/Linven/linvenlogodesign.png',
       ]
     },
     {
@@ -131,7 +131,7 @@ const ProjectPage: React.FC = () => {
       solution: 'I developed a complete brand identity system that balances luxury with sustainability. The design features a warm, earthy color palette accented with subtle gold elements, creating a sense of natural luxury. The minimalist logo design reflects the product\'s purity, while the packaging solutions merge premium aesthetics with eco-friendly materials.',
       results: 'The brand identity has successfully positioned ABISS as a premium player in the sustainable luxury skincare market. The cohesive design system effectively communicates both quality and environmental responsibility, resonating strongly with the target audience of conscious luxury consumers.',
       technologies: ['Brand Identity', 'Packaging Design', 'Visual Design', 'Adobe Creative Cloud'],
-      heroImage: '/images/abissherosection.png',
+      heroImage: '/images/Abiss/abissherosection.png',
       heroText: 'ABISS, a premium natural skincare brand.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
@@ -140,11 +140,11 @@ const ProjectPage: React.FC = () => {
         line3: 'Skincare Brand'
       },
       images: [
-        '/images/abissmockup.png',
-        '/images/bagdesignabiss.png',
-        '/images/logodesignabiss.png',
-        '/images/webdesignforabisstokyo.png',
-        '/images/brandingdesignandlogoforabiss.png'
+        '/images/Abiss/abisswebdesign.png',
+        '/images/Abiss/abissbagdesign.png',
+        '/images/Abiss/abisslogodesign.png',
+        '/images/Abiss/abisspackagingdesign.png',
+        '/images/Abiss/abisslogodesignsec.png'
       ]
     },
     {
@@ -155,7 +155,7 @@ const ProjectPage: React.FC = () => {
       solution: 'The logo design embraces minimalism with clean lines and subtle details that reflect simplicity and precision, conveying authority and reliability. The typography selection emphasizes modern professionalism, enhancing the brand\'s clear and elegant communication style. A rich brown color palette was carefully chosen to evoke warmth, stability, and trust, aligning perfectly with the firm\'s commitment to professionalism and integrity.',
       results: 'The minimalist brand identity successfully positions KōLegal as a modern, trustworthy law firm while honoring its Japanese heritage. The clean design system and sophisticated color palette effectively communicate the firm\'s values of precision, reliability, and professionalism, resonating strongly with their target audience.',
       technologies: ['Brand Identity', 'Logo Design', 'Typography', 'Print Design', 'Adobe Creative Cloud'],
-      heroImage: '/images/herojapaneselawfirmwebdesign.png',
+      heroImage: '/images/KoLegal/kolegallogodesign.png',
       heroText: 'KōLegal, a modern Japanese law firm.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
@@ -166,9 +166,10 @@ const ProjectPage: React.FC = () => {
       // Keep the original two-line layout for desktop compatibility
       heroTextLines: ['KōLegal, a modern', 'Japanese law firm.'],
       images: [
-        '/images/japaneselawfirmpng.png',
-        '/images/kolegalprintdesign.png',
-        '/images/kolegallogodesign.png'
+        '/images/KoLegal/kolegallogodesign.png',
+        '/images/KoLegal/kolegalprintdesign.png',
+        '/images/KoLegal/kolegalbusinesscard.png',
+        '/images/KoLegal/kolegalinside.png'
       ]
     },
     {
@@ -181,7 +182,7 @@ const ProjectPage: React.FC = () => {
       results: 'The new brand identity helped SUBLEE2 establish a clear and confident market presence. The website has seen increased traffic and longer visit durations. The branding materials, including the ID badges, reinforced the company\'s internal culture and professional image during some events.',
       technologies: ['UX/UI Design', 'Web Design', 'Brand Identity','Adobe Creative Cloud'],
       // Updated hero image for SUBLEE2
-      heroImage: '/images/heroitcompanydesign.png',
+      heroImage: '/images/Sublee/heroitcompanydesign.png',
       heroText: 'Branding for a Tech Company',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
@@ -189,10 +190,10 @@ const ProjectPage: React.FC = () => {
         line2: 'a Tech Company.'
       },
       images: [
-        '/images/subleelogodesign.png',
-        '/images/iicompanyeventpass.png',
-        '/images/usbsublee.png',
-        '/images/digitalcompanyprintbook.png'
+        '/images/Sublee/subleelogodesign.png',
+        '/images/Sublee/subleeeventpass.png',
+        '/images/Sublee/subleeusbdesign.png',
+        '/images/Sublee/subleeprintdesign.png'
       ]
     }
   ];

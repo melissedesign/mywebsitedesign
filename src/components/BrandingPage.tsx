@@ -194,17 +194,17 @@ const BrandingPage: React.FC = () => {
     {
       title: 'ABISS',
       category: 'Sustainable Skincare',
-      image: '/images/webdesignforabisstokyo.png'
+      image: '/images/Abiss/abisslogodesign.png'
     },
     {
       title: 'Linven',
       category: 'Luxury Bedding Brand',
-      image: '/images/taglinvenprintdesign.png'
+      image: '/images/Linven/linvenlogodesign.png'
     },
     {
       title: 'KōLegal',
       category: 'Law Firm',
-      image: '/images/japaneselawfirm.png'
+      image: '/images/KoLegal/kolegallogodesign.png'
     }
   ];
 

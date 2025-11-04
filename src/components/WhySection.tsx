@@ -4,20 +4,20 @@ const WhySection: React.FC = () => {
   // Curated selection of 8 high-impact images from all projects for optimal visual balance
   const orbitalImages = [
     // ABISS project - 2 key visuals
-    '/images/webdesignforabisstokyo.png',
-    '/images/brandingdesignandlogoforabiss.png',
-    
+    '/images/Abiss/abisswebdesign.png',
+    '/images/Abiss/abisslogodesign.png',
+
     // Linven project - 2 key visuals
-    '/images/taglinvenprintdesign.png',
-    '/images/linvenvisual.png',
-    
+    '/images/Linven/taglinvenprintdesign.png',
+    '/images/Linven/linvenvisual.png',
+
     // KōLegal project - 2 key visuals
-    '/images/japaneselawfirmpng.png',
-    '/images/kolegallogodesign.png',
-    
+    '/images/KoLegal/kolegallogodesign.png',
+    '/images/KoLegal/kolegalprintdesign.png',
+
     // SUBLEE2 project - 2 key visuals
-    '/images/subleelogodesign.png',
-    '/images/iicompanyeventpass.png'
+    '/images/Sublee/subleelogodesign.png',
+    '/images/Sublee/subleeeventpass.png'
   ];
 
   return (
