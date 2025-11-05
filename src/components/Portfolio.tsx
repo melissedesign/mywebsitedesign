@@ -20,8 +20,8 @@ const Portfolio: React.FC = () => {
       id: 'linven',
       title: 'Linven',
       categories: ['Brand Identity', 'Web Design', 'Print Design'],
-      image: '/images/Linven/linvenvisual.png',
-      hoverImage: '/images/Linven/linvenbusinesscard.png',
+      image: '/images/Linven/llinvenbusinesscard.png',
+      hoverImage: '/images/Linven/linvenprintdesign.png',
     },
     {
       id: 'kolegal',
