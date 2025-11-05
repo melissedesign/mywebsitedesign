@@ -29,6 +29,14 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[100dvh] w-screen overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div className="absolute inset-0">
+          <img
+            src="/images/homepagepicture.jpg"
+            alt="Background"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-pink-200 to-purple-200 rounded-full blur-3xl animate-pulse-gentle"></div>
           <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-blue-200 to-cyan-200 rounded-full blur-3xl animate-pulse-gentle" style={{ animationDelay: '1.5s' }}></div>
