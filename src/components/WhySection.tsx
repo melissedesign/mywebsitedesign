@@ -25,9 +25,9 @@ const WhySection: React.FC = () => {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
           
-          {/* Section Header - Enhanced with larger font and padding - Reduced top spacing */}
-          <div className="text-center mb-12">
-            <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-8 py-4 shadow-sm mb-6">
+          {/* Section Header - Enhanced with larger font and padding - Increased mobile spacing */}
+          <div className="text-center mb-16 md:mb-12">
+            <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-8 py-4 shadow-sm mb-6 md:mb-6">
               <h2 className="text-2xl md:text-3xl font-medium text-gray-700">
                 Why TheMelisseDesign?
               </h2>
