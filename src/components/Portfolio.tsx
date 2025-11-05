@@ -20,22 +20,22 @@ const Portfolio: React.FC = () => {
       id: 'linven',
       title: 'Linven',
       categories: ['Brand Identity', 'Web Design', 'Print Design'],
-      image: '/images/Linven/taglinvenprintdesign.png',
+      image: '/images/Linven/linvenvisual.png',
       hoverImage: '/images/Linven/linvenbusinesscard.png',
     },
     {
       id: 'kolegal',
       title: 'KōLegal',
       categories: ['Brand Identity', 'Print Design'],
-      image: '/images/KoLegal/kolegalbusinesscard.png',
+      image: '/images/KoLegal/kolegallogodesign.png',
       hoverImage: '/images/KoLegal/kolegalprintdesign.png',
     },
     {
       id: 'sublee',
       title: 'SUBLEE2',
       categories: ['Brand Identity', 'UX/UI Design'],
-      image: '/images/Sublee/subleeeventpass.png',
-      hoverImage: '/images/Sublee/subleelogodesign.png',
+      image: '/images/Sublee/subleelogodesign.png',
+      hoverImage: '/images/Sublee/heroitcompanydesign.png',
     }
   ];
 
