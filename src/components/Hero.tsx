@@ -62,7 +62,6 @@ const Hero: React.FC = () => {
 
               <div className="pt-6 md:pt-8">
                 <div className="bg-white/20 backdrop-blur-lg border border-white/30 rounded-full px-2 py-1 shadow-sm inline-block">
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent via-white/50 to-white z-30 pointer-events-none"></div>
                   <HashLink
                     to="/#get-in-touch"
                     scroll={scrollWithOffset}
