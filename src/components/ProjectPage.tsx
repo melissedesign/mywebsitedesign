@@ -108,7 +108,7 @@ const ProjectPage: React.FC = () => {
       solution: 'I created the entire visual identity: logo, color palette, typography, and print materials like business cards and product tags. Once the brand look was defined, I designed and built a responsive website that highlighted the textures, quality, and lifestyle behind the brand. All while ensuring a smooth and intuitive user experience.',
       results: 'The branding and website gave Linven a clear and consistent identity. The design reflects the brand\'s values and offers a smooth and elegant experience for users.',
       technologies: ['UX/UI Design', 'Responsive Web Design', 'Cloudinary', 'HTML/CSS', 'Adobe Creative Cloud'],
-      heroImage: '/images/Linven/linvenherosection.png',
+      heroImage: '/images/Linven/linvenherosectionmin.png',
       heroText: 'Linven, a Mediterranean-inspired bedding brand.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
