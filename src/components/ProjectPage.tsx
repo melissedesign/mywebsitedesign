@@ -117,7 +117,7 @@ const ProjectPage: React.FC = () => {
         line3: 'Bedding Brand'
       },
       images: [
-        '/images/Linven/taglinvenprintdesign.png',
+        '/images/Linven/linvenherosection.png',
         '/images/Linven/linvenvisual.png',
         '/images/Linven/linvenbusinesscard.png',
         '/images/Linven/linvenlogodesign.png',
