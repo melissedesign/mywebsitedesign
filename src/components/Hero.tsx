@@ -15,19 +15,17 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
-
       setTimeout(() => {
         setCurrentWord(prev => prev === 'Convert' ? 'Connect' : 'Convert');
         setIsAnimating(false);
       }, 300);
-
     }, 3500);
-
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative min-h-[100dvh] w-screen overflow-hidden">
+      {/* 🎨 Background Image avec overlay élégant */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
           <img
@@ -36,41 +34,52 @@ const Hero: React.FC = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Overlay gradient subtil pour plus de contraste */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
       </div>
 
+      {/* Content */}
       <div className="relative z-20 flex items-center justify-center min-h-[100dvh] w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center">
-            <div className="max-w-5xl mx-auto space-y-4 md:space-y-6">
-              <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-tight font-hero">
-                <span className="text-black font-light">Grow. Engage. </span>
+            <div className="max-w-5xl mx-auto space-y-6 md:space-y-8">
+              
+              {/* 🎨 TITRE ÉLÉGANT - Texte blanc avec effet luxe */}
+              <h1 className="text-[2.8rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight font-hero">
+                <span className="text-white font-light drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
+                  Grow. Engage. 
+                </span>
+                <br className="hidden sm:inline" />
+                {/* 🎨 MOT ANIMÉ - Effet doré/champagne élégant */}
                 <span
-                  className={`text-[#5A1717] font-light transition-all duration-600 ease-in-out inline-block ${
-                    isAnimating ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
+                  className={`inline-block font-light bg-gradient-to-r from-[#D4AF37] via-[#F4E4C1] to-[#D4AF37] bg-clip-text text-transparent transition-all duration-600 ease-in-out ${
+                    isAnimating ? 'opacity-0 transform translate-y-2 scale-95' : 'opacity-100 transform translate-y-0 scale-100'
                   }`}
+                  style={{
+                    textShadow: '0 0 40px rgba(212, 175, 55, 0.4), 0 4px 12px rgba(0,0,0,0.5)'
+                  }}
                 >
                   {currentWord}.
                 </span>
               </h1>
 
+              {/* 🎨 SOUS-TITRE - Blanc élégant */}
               <div className="max-w-4xl mx-auto">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 leading-relaxed font-hero-alt font-light">
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/95 leading-relaxed font-hero-alt font-light tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
                   Attract clients by elevating your brand.
                 </p>
               </div>
 
-              <div className="pt-6 md:pt-8">
-                <div className="bg-white border border-[#FBEAEA] rounded-full px-2 py-1 shadow-sm inline-block">
-                  <HashLink
-                    to="/#get-in-touch"
-                    scroll={scrollWithOffset}
-                    className="relative px-4 md:px-6 py-2 text-xs md:text-sm font-medium text-gray-700 transition-all duration-300 rounded-full hover:text-black hover:bg-[#FBEAEA]/30 hover:scale-105 hover:shadow-sm inline-flex items-center"
-                  >
-                    <span>Get in touch</span>
-                    <ArrowRight className="ml-2 w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
-                  </HashLink>
-                </div>
+              {/* 🎨 BOUTON ÉLÉGANT - Style haut de gamme */}
+              <div className="pt-8 md:pt-10">
+                <HashLink
+                  to="/#get-in-touch"
+                  scroll={scrollWithOffset}
+                  className="inline-flex items-center gap-3 px-8 py-4 md:px-10 md:py-5 text-base md:text-lg font-light tracking-wider text-white bg-white/10 backdrop-blur-sm border border-white/30 rounded-full transition-all duration-500 hover:bg-white/20 hover:border-white/50 hover:scale-105 hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] group"
+                >
+                  <span>Get in touch</span>
+                  <ArrowRight className="w-5 h-5 transform transition-transform duration-300 group-hover:translate-x-1" />
+                </HashLink>
               </div>
             </div>
           </div>
