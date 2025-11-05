@@ -15,17 +15,19 @@ const Hero: React.FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
+
       setTimeout(() => {
         setCurrentWord(prev => prev === 'Convert' ? 'Connect' : 'Convert');
         setIsAnimating(false);
       }, 300);
+
     }, 3500);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative min-h-[100dvh] w-screen overflow-hidden">
-      {/* Background Image avec overlay subtil */}
       <div className="absolute inset-0">
         <div className="absolute inset-0">
           <img
@@ -34,23 +36,17 @@ const Hero: React.FC = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        {/* 🎨 CHANGEMENT 1: Overlay plus léger et moderne */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-20 flex items-center justify-center min-h-[100dvh] w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center text-center">
-            
-            {/* 🎨 CHANGEMENT 2: Conteneur avec glassmorphism */}
-            <div className="max-w-5xl mx-auto space-y-6 md:space-y-8 p-8 md:p-12 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl">
-              
-              {/* 🎨 CHANGEMENT 3: Titre en BLANC avec ombre */}
-              <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight font-hero">
-                <span className="text-white font-light drop-shadow-lg">Grow. Engage. </span>
+            <div className="max-w-5xl mx-auto space-y-4 md:space-y-6">
+              <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-tight font-hero">
+                <span className="text-black font-light">Grow. Engage. </span>
                 <span
-                  className={`text-[#FBEAEA] font-light transition-all duration-600 ease-in-out inline-block drop-shadow-lg ${
+                  className={`text-[#5A1717] font-light transition-all duration-600 ease-in-out inline-block ${
                     isAnimating ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
                   }`}
                 >
@@ -58,26 +54,25 @@ const Hero: React.FC = () => {
                 </span>
               </h1>
 
-              {/* 🎨 CHANGEMENT 4: Sous-titre en blanc */}
               <div className="max-w-4xl mx-auto">
-                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/90 leading-relaxed font-hero-alt font-light drop-shadow-md">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-500 leading-relaxed font-hero-alt font-light">
                   Attract clients by elevating your brand.
                 </p>
               </div>
 
-              {/* 🎨 CHANGEMENT 5: Bouton plus visible */}
               <div className="pt-6 md:pt-8">
-                <HashLink
-                  to="/#get-in-touch"
-                  scroll={scrollWithOffset}
-                  className="inline-flex items-center px-8 py-4 text-base md:text-lg font-medium text-white bg-[#5A1717] hover:bg-[#7A2727] rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                >
-                  <span>Get in touch</span>
-                  <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" />
-                </HashLink>
+                <div className="bg-white border border-[#FBEAEA] rounded-full px-2 py-1 shadow-sm inline-block">
+                  <HashLink
+                    to="/#get-in-touch"
+                    scroll={scrollWithOffset}
+                    className="relative px-4 md:px-6 py-2 text-xs md:text-sm font-medium text-gray-700 transition-all duration-300 rounded-full hover:text-black hover:bg-[#FBEAEA]/30 hover:scale-105 hover:shadow-sm inline-flex items-center"
+                  >
+                    <span>Get in touch</span>
+                    <ArrowRight className="ml-2 w-3 h-3 md:w-4 md:h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+                  </HashLink>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
