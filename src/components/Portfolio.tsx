@@ -34,8 +34,8 @@ const Portfolio: React.FC = () => {
       id: 'sublee',
       title: 'SUBLEE2',
       categories: ['Brand Identity', 'UX/UI Design'],
-      image: '/images/Sublee/subleelogodesign.png',
-      hoverImage: '/images/Sublee/subleeeventpass.png',
+      image: '/images/Sublee/subleeeventpass.png',
+      hoverImage: '/images/Sublee/subleelogodesign.png',
     }
   ];
 
