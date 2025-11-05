@@ -80,7 +80,7 @@ const About: React.FC = () => {
                 {/* Rounded rectangle container matching "Modern websites" style */}
                 <div className="aspect-[4/5] overflow-hidden rounded-[32px] shadow-lg">
                   <img
-                    src="/images/MelisseWebDesigner.jpg"
+                    src="/images/melissewebdesigner.png"
                     alt="Profile"
                     className="w-full h-full object-cover"
                     loading="lazy"
