@@ -20,14 +20,14 @@ const Portfolio: React.FC = () => {
       id: 'linven',
       title: 'Linven',
       categories: ['Brand Identity', 'Web Design', 'Print Design'],
-      image: '/images/Linven/llinvenbusinesscard.png',
-      hoverImage: '/images/Linven/linvenprintdesign',
+      image: '/images/Linven/taglinvenprintdesign.png',
+      hoverImage: '/images/Linven/linvenbusinesscard.png',
     },
     {
       id: 'kolegal',
       title: 'KōLegal',
       categories: ['Brand Identity', 'Print Design'],
-      image: '/images/KoLegal/kolegallogodesign.png',
+      image: '/images/KoLegal/kolegalbusinesscard.png',
       hoverImage: '/images/KoLegal/kolegalprintdesign.png',
     },
     {
@@ -35,7 +35,7 @@ const Portfolio: React.FC = () => {
       title: 'SUBLEE2',
       categories: ['Brand Identity', 'UX/UI Design'],
       image: '/images/Sublee/subleelogodesign.png',
-      hoverImage: '/images/Sublee/heroitcompanydesign.png',
+      hoverImage: '/images/Sublee/subleeeventpass.png',
     }
   ];
 
