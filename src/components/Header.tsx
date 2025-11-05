@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
 
-  // Check if we're on ABISS, KōLegal, Linven, SUBLEE2 project pages, service pages, contact page, or homepage
+  // Check if we're on ABISS, KōLegal, Linven, SUBLEE2 project pages, service pages, or contact page
   const isAbissProject = location.pathname === '/project/abiss';
   const isKolegalProject = location.pathname === '/project/kolegal';
   const isLinvenProject = location.pathname === '/project/linven';
@@ -22,11 +22,10 @@ const Header: React.FC<HeaderProps> = ({ scrolled }) => {
   const isWebDesignPage = location.pathname === '/web-design';
   const isBrandingPage = location.pathname === '/branding-communication';
   const isContactPage = location.pathname === '/contact';
-  const isHomepage = location.pathname === '/' || location.hash === '#/';
-
-  // On ABISS, KōLegal, Linven, SUBLEE2, Web Design, Branding, Homepage, or Contact pages: use white styling only when not scrolled (hero section)
+  
+  // On ABISS, KōLegal, Linven, SUBLEE2, Web Design, Branding, or Contact pages: use white styling only when not scrolled (hero section)
   // On other pages: use standard styling
-  const useWhiteTheme = (isAbissProject || isKolegalProject || isLinvenProject || isSublee2Project || isWebDesignPage || isBrandingPage || isHomepage) && !scrolled;
+  const useWhiteTheme = (isAbissProject || isKolegalProject || isLinvenProject || isSublee2Project || isWebDesignPage || isBrandingPage) && !scrolled;
 
   // Handle clicking outside mobile menu to close it
   useEffect(() => {
