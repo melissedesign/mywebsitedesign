@@ -121,7 +121,7 @@ const Features: React.FC = () => {
                   </div>
                   <div className="flex items-center">
                     <span className="text-gray-500 mr-3 text-lg flex-shrink-0 leading-none">•</span>
-                    <span className="text-sm md:text-base text-gray-700 leading-relaxed">Corporate communication</span>
+                    <span className="text-sm md:text-base text-gray-700 leading-relaxed">PPTX Presentation</span>
                   </div>
                   <div className="flex items-center">
                     <span className="text-gray-500 mr-3 text-lg flex-shrink-0 leading-none">•</span>
