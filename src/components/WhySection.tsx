@@ -22,12 +22,12 @@ const WhySection: React.FC = () => {
 
   return (
     <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-6">
-         <div className="max-w-[1400px] mx-auto">
-          
-          {/* Section Header - Enhanced with larger font and padding - Increased mobile spacing */}
-          <div className="text-center mb-16 md:mb-12">
-            <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-8 py-4 shadow-sm mb-6 md:mb-6">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-[1400px] mx-auto">
+
+          {/* Section Header - Enhanced with larger font and padding - Reduced top spacing */}
+          <div className="text-center mb-12">
+            <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-8 py-4 shadow-sm mb-6">
               <h2 className="text-2xl md:text-3xl font-medium text-gray-700">
                 Why TheMelisseDesign?
               </h2>
@@ -39,19 +39,21 @@ const WhySection: React.FC = () => {
               </p>
             </div>
           </div>
-          
-           {/* Three Cards Layout - Exact spacing and proportions */}
+
+          {/* Three Cards Layout - Exact spacing and proportions */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
-            {/* Card 1 - Seamless Collaboration - Updated background color and image */}
+
+            {/* Card 1 - Seamless Collaboration - Updated with Cloudinary CDN */}
             <div className="bg-[#fcf2f8] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
               {/* Image anchored to top - takes up ~65% of card height */}
               <div className="h-[65%] relative">
                 <img
                   src="/images/collaborationfreelanceintokyo.png"
-                  alt="collaborationfreelanceintokyo.png"
+                  alt="Seamless collaboration - Two hands reaching toward each other"
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="high"
                 />
               </div>
 
@@ -78,7 +80,7 @@ const WhySection: React.FC = () => {
                       {orbitalImages.map((image, index) => {
                         const angle = (index * 360) / 8; // Evenly distribute 8 images around circle
                         const radius = 110; // Distance from center
-                        
+
                         return (
                           <div
                             key={index}
@@ -95,6 +97,8 @@ const WhySection: React.FC = () => {
                                 alt={`Project visual ${index + 1}`}
                                 className="w-full h-full object-cover"
                                 loading="lazy"
+                                decoding="async"
+                                fetchPriority="low"
                                 onError={(e) => {
                                   console.log(`Failed to load image: ${image}`);
                                   // Hide the container if image fails to load
@@ -108,7 +112,7 @@ const WhySection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Bottom text - Updated to reflect curated selection */}
                 <div className="flex items-center justify-center">
                   <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-center">
@@ -129,7 +133,7 @@ const WhySection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Subtitle content - Right-aligned to match title */}
                 <div className="text-right">
                   <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-right">
