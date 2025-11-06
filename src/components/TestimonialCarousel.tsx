@@ -155,21 +155,21 @@ const TestimonialCarousel: React.FC = () => {
 
           {/* Carousel Container */}
           <div className="relative">
-            {/* Navigation Arrows - Hidden on mobile to encourage swiping */}
+            {/* Navigation Arrows - Responsive sizing: smaller on mobile, larger on desktop */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
+              className="absolute left-0 sm:left-2 md:-translate-x-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 sm:p-2.5 md:p-3 shadow-md sm:shadow-lg transition-all duration-300 hover:shadow-xl"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-6 h-6 text-[#5A1717]" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#5A1717]" />
             </button>
 
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
+              className="absolute right-0 sm:right-2 md:translate-x-4 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 rounded-full p-2 sm:p-2.5 md:p-3 shadow-md sm:shadow-lg transition-all duration-300 hover:shadow-xl"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-6 h-6 text-[#5A1717]" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-[#5A1717]" />
             </button>
 
             {/* Testimonial Cards Container with Touch Support */}
@@ -217,19 +217,20 @@ const TestimonialCarousel: React.FC = () => {
               </div>
             </div>
 
-            {/* Navigation Dots */}
-            <div className="flex justify-center mt-6 md:mt-8 space-x-3">
+            {/* Navigation Dots - Responsive sizing for mobile and desktop */}
+            <div className="flex justify-center mt-6 md:mt-8 gap-2 sm:gap-3">
               {testimonials.map((_, index) => (
-               <button
-  key={index}
-  onClick={() => goToSlide(index)}
-  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-    index === currentIndex
-      ? 'bg-[#FBEAEA] scale-125'
-      : 'bg-gray-300 hover:bg-gray-400'
-  }`}
-  aria-label={`Go to testimonial ${index + 1}`}
-/>
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'bg-[#5A1717] scale-110 sm:scale-125'
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
             </div>
 
             {/* Mobile Swipe Hint - Shows only on first visit */}
