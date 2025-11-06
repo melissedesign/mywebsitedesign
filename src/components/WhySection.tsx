@@ -44,19 +44,19 @@ const WhySection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[500px] lg:max-w-none mx-auto">
             
             {/* Card 1 - Seamless Collaboration - Updated background color and image */}
-            <div className="bg-[#fcf2f8] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
-              {/* Image anchored to top - takes up ~65% of card height */}
-              <div className="h-[65%] relative">
+            <div className="bg-[#fcf2f8] rounded-[32px] h-[600px] flex flex-col p-8 lg:p-10">
+              {/* Image with proper spacing from top */}
+              <div className="flex-1 mb-8">
                 <img
                   src="/images/collaborationfreelanceintokyo.png"
                   alt="collaborationfreelanceintokyo.png"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-[20px]"
                   loading="lazy"
                 />
               </div>
-              
-              {/* Text content at bottom - takes up ~35% with proper padding */}
-              <div className="h-[35%] p-8 lg:p-12 flex flex-col justify-center">
+
+              {/* Text content at bottom */}
+              <div className="flex flex-col">
                 <h3 className="text-[42px] lg:text-[48px] font-normal text-black mb-4 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
