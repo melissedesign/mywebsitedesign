@@ -48,7 +48,7 @@ const WhySection: React.FC = () => {
               </div>
 
               <div className="h-[40%] sm:h-[38%] md:h-[35%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
+                <h3 className="text-[56px] sm:text-[64px] lg:text-[72px] font-normal text-black mb-3 sm:mb-4 leading-[1.05] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
                 <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal">
@@ -114,7 +114,7 @@ const WhySection: React.FC = () => {
                 {/* Main headline - Right-aligned, black text matching Card 1 style */}
                 <div className="mb-4 sm:mb-6">
                   <div className="text-right">
-                    <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black leading-[1.1] tracking-[-0.02em] break-words">
+                    <h3 className="text-[64px] sm:text-[72px] lg:text-[84px] font-normal text-black leading-[1.05] tracking-[-0.02em] break-words">
                       Modern,<br />responsive<br />websites
                     </h3>
                   </div>

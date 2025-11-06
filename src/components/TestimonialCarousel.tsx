@@ -218,12 +218,12 @@ const TestimonialCarousel: React.FC = () => {
             </div>
 
             {/* Navigation Dots */}
-            <div className="flex justify-center mt-6 md:mt-8 space-x-3">
+            <div className="flex justify-center mt-6 md:mt-8 gap-3 sm:gap-4">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                     index === currentIndex
                       ? 'bg-[#FBEAEA] scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
