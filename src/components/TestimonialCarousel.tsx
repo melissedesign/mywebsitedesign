@@ -155,21 +155,21 @@ const TestimonialCarousel: React.FC = () => {
 
           {/* Carousel Container */}
           <div className="relative">
-            {/* Navigation Arrows - Responsive sizing: smaller on mobile, larger on desktop */}
+            {/* Navigation Arrows - Hidden on mobile to encourage swiping */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 sm:left-2 md:-translate-x-4 top-1/2 -translate-y-1/2 z-10 bg-[#FBEAEA] hover:bg-[#f5d9d9] rounded-full p-1.5 sm:p-2 shadow-md transition-all duration-300 hover:shadow-lg"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#5A1717]" />
+              <ChevronLeft className="w-6 h-6 text-[#5A1717]" />
             </button>
 
             <button
               onClick={goToNext}
-              className="absolute right-0 sm:right-2 md:translate-x-4 top-1/2 -translate-y-1/2 z-10 bg-[#FBEAEA] hover:bg-[#f5d9d9] rounded-full p-1.5 sm:p-2 shadow-md transition-all duration-300 hover:shadow-lg"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#5A1717]" />
+              <ChevronRight className="w-6 h-6 text-[#5A1717]" />
             </button>
 
             {/* Testimonial Cards Container with Touch Support */}
