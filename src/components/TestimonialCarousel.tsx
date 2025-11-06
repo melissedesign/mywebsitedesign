@@ -221,16 +221,15 @@ const TestimonialCarousel: React.FC = () => {
             <div className="flex justify-center mt-6 md:mt-8 space-x-3">
               {testimonials.map((_, index) => (
                 <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'bg-[#FBEAEA] scale-125'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
+  key={index}
+  onClick={() => goToSlide(index)}
+  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
+    index === currentIndex
+      ? 'bg-[#5A1717] scale-125'
+      : 'bg-gray-300 hover:bg-gray-400'
+  }`}
+  aria-label={`Go to testimonial ${index + 1}`}
+/>
             </div>
 
             {/* Mobile Swipe Hint - Shows only on first visit */}
