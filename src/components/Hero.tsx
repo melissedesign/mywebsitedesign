@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Dynamic Scroll-Based Transition Effect */}
-      <SectionTransition position="bottom" height="12rem" intensity="medium" />
+      <SectionTransition position="bottom" height="12rem" intensity="light" />
 
       <div className="relative z-20 flex items-center justify-center min-h-[100dvh] w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -35,10 +35,10 @@ const SectionTransition: React.FC<SectionTransitionProps> = ({
   const gradientIntensities = {
     light: {
       start: 'rgba(255, 255, 255, 0)',
-      mid1: 'rgba(255, 255, 255, 0.2)',
-      mid2: 'rgba(255, 255, 255, 0.5)',
-      mid3: 'rgba(255, 255, 255, 0.7)',
-      end: 'rgba(255, 255, 255, 0.9)'
+      mid1: 'rgba(255, 255, 255, 0.1)',
+      mid2: 'rgba(255, 255, 255, 0.3)',
+      mid3: 'rgba(255, 255, 255, 0.5)',
+      end: 'rgba(255, 255, 255, 0.7)'
     },
     medium: {
       start: 'rgba(255, 255, 255, 0)',
