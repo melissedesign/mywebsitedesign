@@ -12,6 +12,69 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ============================================
+   HERO TO PORTFOLIO TRANSITION EFFECTS
+   ============================================ */
+
+/* Smooth gradient fade effect between sections */
+.hero-fade-gradient {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 20%,
+    rgba(255, 255, 255, 0.3) 40%,
+    rgba(255, 255, 255, 0.6) 60%,
+    rgba(255, 255, 255, 0.85) 80%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  will-change: opacity;
+}
+
+/* Subtle blur effect for depth perception */
+.hero-blur-transition {
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: backdrop-filter 0.6s ease-out;
+}
+
+/* Animated gradient that responds to scroll */
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.portfolio-fade-in {
+  animation: fadeInFromTop 0.8s ease-out forwards;
+}
+
+/* Smooth opacity transition for section overlap */
+.section-transition-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 25%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.9) 75%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+/* Enhanced scroll-triggered fade */
+@media (prefers-reduced-motion: no-preference) {
+  .smooth-section-transition {
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 /* Optimize scrolling performance on mobile */
 body {
   overflow-x: hidden;

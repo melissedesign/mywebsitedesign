@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
+import SectionTransition from './SectionTransition';
 
 const Hero: React.FC = () => {
   const [currentWord, setCurrentWord] = useState('Convert');
@@ -38,6 +39,9 @@ const Hero: React.FC = () => {
         </div>
         <div className="absolute inset-0 bg-black/20"></div>
       </div>
+
+      {/* Dynamic Scroll-Based Transition Effect */}
+      <SectionTransition position="bottom" height="12rem" intensity="medium" />
 
       <div className="relative z-20 flex items-center justify-center min-h-[100dvh] w-full">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

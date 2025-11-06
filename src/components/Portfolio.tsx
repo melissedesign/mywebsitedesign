@@ -115,16 +115,18 @@ const Portfolio: React.FC = () => {
   };
 
   return (
-    <section 
+    <section
       ref={portfolioRef}
-      id="portfolio" 
-      className="py-12 md:py-16 lg:py-20 bg-white"
+      id="portfolio"
+      className="relative py-12 md:py-16 lg:py-20 bg-white"
       style={{
         // Enable hardware acceleration for smoother scrolling
         transform: 'translateZ(0)',
         willChange: 'transform'
       }}
     >
+      {/* Smooth gradient overlay for hero transition */}
+      <div className="absolute top-0 left-0 right-0 h-24 md:h-32 lg:h-40 bg-gradient-to-b from-white/80 via-white/95 to-white pointer-events-none -mt-12 md:-mt-16 lg:-mt-20"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Optimized mobile heading with significantly increased bottom margin */}
