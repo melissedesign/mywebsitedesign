@@ -118,16 +118,20 @@ const Portfolio: React.FC = () => {
     <section
       ref={portfolioRef}
       id="portfolio"
-      className="relative py-12 md:py-16 lg:py-20 bg-white"
+      className="relative py-12 md:py-16 lg:py-20 portfolio-gradient-background"
       style={{
         // Enable hardware acceleration for smoother scrolling
         transform: 'translateZ(0)',
         willChange: 'transform'
       }}
     >
-      {/* Smooth gradient overlay for hero transition */}
-      <div className="absolute top-0 left-0 right-0 h-24 md:h-32 lg:h-40 bg-gradient-to-b from-white/80 via-white/95 to-white pointer-events-none -mt-12 md:-mt-16 lg:-mt-20"></div>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Smooth gradient overlay for hero transition - no visible border */}
+      <div className="absolute top-0 left-0 right-0 h-32 md:h-40 lg:h-48 pointer-events-none -mt-12 md:-mt-16 lg:-mt-20"
+           style={{
+             background: 'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 30%, rgba(252,250,252,0.6) 60%, rgba(250,248,250,1) 100%)'
+           }}>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Optimized mobile heading with significantly increased bottom margin */}
           <div className="text-center mb-16 md:mb-20 lg:mb-24">
