@@ -604,6 +604,22 @@ spline-viewer::part(canvas) {
 }
 
 /* ============================================
+   WHY SECTION - RIGHT-ALIGNED TEXT STYLES
+   ============================================ */
+
+/* Ensure right alignment is maintained across all devices */
+.text-right {
+  text-align: right !important;
+  direction: ltr;
+}
+
+/* Force right alignment for specific elements */
+.bg-\[\#fcf2f8\] h3,
+.bg-\[\#fcf2f8\] p {
+  text-align: inherit;
+}
+
+/* ============================================
    WHY SECTION - RESPONSIVE MEDIA QUERIES
    ============================================ */
 

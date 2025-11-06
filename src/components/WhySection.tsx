@@ -125,21 +125,21 @@ const WhySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3 - Modern, Impactful Websites - Bottom-right layout */}
+            {/* Card 3 - Modern, Impactful Websites - Bottom-right layout, ALWAYS right-aligned */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col justify-end">
-                {/* Main headline display - positioned at bottom-right with increased font size */}
+                {/* Main headline display - ALWAYS right-aligned on all devices */}
                 <div className="mb-4 sm:mb-6">
-                  <div className="text-center sm:text-right">
-                    <div className="text-[56px] sm:text-[68px] md:text-[80px] lg:text-[90px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
+                  <div className="text-right">
+                    <h3 className="text-[56px] sm:text-[68px] md:text-[80px] lg:text-[90px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
                       Modern,<br />responsive<br />websites
-                    </div>
+                    </h3>
                   </div>
                 </div>
 
-                {/* Subtitle content - Directly below headline, right-aligned with increased font size */}
-                <div className="text-center sm:text-right">
-                  <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal">
+                {/* Subtitle content - ALWAYS right-aligned on all devices */}
+                <div className="text-right">
+                  <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal text-right">
                     Sleek, functional websites that reflect your brand and convert visitors into clients.
                   </p>
                 </div>
