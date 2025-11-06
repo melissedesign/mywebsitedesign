@@ -225,7 +225,7 @@ const TestimonialCarousel: React.FC = () => {
                   onClick={() => goToSlide(index)}
                   className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-[#381c2d] scale-110 sm:scale-125'
+                      ? 'bg-[#381c2d] scale-90 sm:scale-100'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
