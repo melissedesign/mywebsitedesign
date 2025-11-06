@@ -118,7 +118,7 @@ const BrandingPage: React.FC = () => {
     },
     {
       number: '05',
-      title: 'Corporate Presentations',
+      title: 'PPTX Presentation',
       description: 'Design of custom, professional slides for pitch decks, company overviews, reports, and internal documents.'
     },
     {
