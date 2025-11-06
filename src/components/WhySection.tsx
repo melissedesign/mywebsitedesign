@@ -145,7 +145,6 @@ const WhySection: React.FC = () => {
     </div>
   </div>
 </div>
-```
 
 ---
 
