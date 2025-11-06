@@ -125,17 +125,42 @@ const WhySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3 - Modern, Impactful Websites - Bottom-right layout, ALWAYS right-aligned */}
-            <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col overflow-hidden">
-              <div className="flex-1 flex flex-col justify-end">
-                {/* Main headline display - ALWAYS right-aligned on all devices */}
-                <div className="mb-4 sm:mb-6">
-                  <div className="text-right">
-                    <h3 className="text-[48px] sm:text-[56px] md:text-[64px] lg:text-[72px] font-normal text-black leading-[0.95] tracking-[-0.02em] break-words hyphens-auto">
-                      Modern,<br />responsive<br />websites
-                    </h3>
-                  </div>
-                </div>
+           {/* Card 3 - Modern, Impactful Websites - CENTERED text */}
+<div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
+  <div className="flex-1 flex flex-col justify-center items-center">
+    {/* Main headline display - CENTERED */}
+    <div className="text-center mb-6">
+      <h3 className="text-[52px] sm:text-[58px] lg:text-[64px] font-normal text-black leading-[1.1] tracking-[-0.02em]">
+        Modern,<br />responsive<br />websites
+      </h3>
+    </div>
+
+    {/* Subtitle content - CENTERED */}
+    <div className="text-center max-w-md">
+      <p className="text-gray-600 text-[16px] leading-[1.6] font-normal">
+        Sleek, functional websites that reflect your brand and convert visitors into clients.
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+## 🎯 **OU PROMPT SIMPLE POUR BOLT:**
+```
+In WhySection.tsx, Card 3 (Modern websites):
+
+Replace the entire card code with CENTERED text layout:
+
+1. Change justify-end to justify-center items-center
+2. Change all text-right to text-center
+3. Reduce font size from text-[64px] lg:text-[72px] to text-[52px] sm:text-[58px] lg:text-[64px]
+4. Change leading-[0.9] to leading-[1.1]
+5. Add max-w-md to subtitle
+6. Use <h3> tag for heading instead of <div>
+
+The text should be vertically and horizontally centered with no word breaks or hyphens.
 
                 {/* Subtitle content - ALWAYS right-aligned on all devices */}
                 <div className="text-right">
