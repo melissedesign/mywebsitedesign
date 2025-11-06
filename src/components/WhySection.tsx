@@ -57,38 +57,38 @@ const WhySection: React.FC = () => {
                 />
               </div>
 
-              {/* Text content at bottom - responsive padding */}
+              {/* Text content at bottom - responsive padding with increased font sizes */}
               <div className="h-[40%] sm:h-[38%] md:h-[35%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-[32px] sm:text-[38px] md:text-[42px] lg:text-[48px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
+                <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
-                <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.5] font-normal">
+                <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal">
                   Smooth and transparent process from vision to delivery.
                 </p>
               </div>
             </div>
 
-            {/* Card 2 - Optimized Circular Orbit Animation - Fully responsive */}
+            {/* Card 2 - Optimized Circular Orbit Animation - Fully responsive with larger size */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col">
-                {/* Circular orbit animation container - responsive sizing */}
+                {/* Circular orbit animation container - increased sizing */}
                 <div className="flex-1 flex items-center justify-center mb-6 sm:mb-8">
-                  <div className="relative w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] md:w-[280px] md:h-[280px]">
+                  <div className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
                     {/* Rotating container that holds 8 carefully selected images */}
                     <div className="absolute inset-0 animate-spin-slow">
-                      {/* 8 images positioned in a perfect circle - responsive sizing */}
+                      {/* 8 images positioned in a perfect circle - larger sizing */}
                       {orbitalImages.map((image, index) => {
                         const angle = (index * 360) / 8;
-                        // Responsive radius based on screen size
+                        // Increased radius for larger animation
                         const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
                         const isTablet = typeof window !== 'undefined' && window.innerWidth >= 640 && window.innerWidth < 768;
-                        const radius = isMobile ? 80 : isTablet ? 95 : 110;
-                        const imageSize = isMobile ? 40 : isTablet ? 45 : 50;
+                        const radius = isMobile ? 95 : isTablet ? 120 : 140;
+                        const imageSize = isMobile ? 50 : isTablet ? 55 : 60;
 
                         return (
                           <div
                             key={index}
-                            className="absolute w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px]"
+                            className="absolute w-[50px] h-[50px] sm:w-[55px] sm:h-[55px] md:w-[60px] md:h-[60px]"
                             style={{
                               top: '50%',
                               left: '50%',
@@ -116,30 +116,30 @@ const WhySection: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom text - Responsive font size */}
+                {/* Bottom text - Increased font size */}
                 <div className="flex items-center justify-center">
-                  <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.5] font-normal text-center">
+                  <p className="text-gray-600 text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] leading-[1.5] font-normal text-center">
                     Over 65+ visuals crafted
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 3 - Modern, Impactful Websites - Fully responsive */}
+            {/* Card 3 - Modern, Impactful Websites - Bottom-right layout */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
-              <div className="flex-1 flex flex-col">
-                {/* Main headline display - responsive alignment and sizing */}
-                <div className="flex-1 flex items-center justify-center sm:justify-end mb-6 sm:mb-8">
+              <div className="flex-1 flex flex-col justify-end">
+                {/* Main headline display - positioned at bottom-right with increased font size */}
+                <div className="mb-4 sm:mb-6">
                   <div className="text-center sm:text-right">
-                    <div className="text-[48px] sm:text-[56px] md:text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
+                    <div className="text-[56px] sm:text-[68px] md:text-[80px] lg:text-[90px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
                       Modern,<br />responsive<br />websites
                     </div>
                   </div>
                 </div>
 
-                {/* Subtitle content - Responsive alignment */}
+                {/* Subtitle content - Directly below headline, right-aligned with increased font size */}
                 <div className="text-center sm:text-right">
-                  <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.5] font-normal">
+                  <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal">
                     Sleek, functional websites that reflect your brand and convert visitors into clients.
                   </p>
                 </div>
