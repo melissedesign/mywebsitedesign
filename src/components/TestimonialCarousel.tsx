@@ -218,7 +218,7 @@ const TestimonialCarousel: React.FC = () => {
             </div>
 
             {/* Navigation Dots - Responsive sizing for mobile and desktop */}
-            <div className="flex justify-center mt-6 md:mt-1 gap-8 sm:gap-3">
+            <div className="flex justify-center mt-6 md:mt-1 gap-3 sm:gap-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
