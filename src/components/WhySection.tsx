@@ -40,8 +40,8 @@ const WhySection: React.FC = () => {
             </div>
           </div>
           
-          {/* Three Cards Layout - Exact spacing and proportions */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[500px] lg:max-w-none mx-auto">
+           {/* Three Cards Layout - Exact spacing and proportions */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             {/* Card 1 - Seamless Collaboration - Updated background color and image */}
             <div className="bg-[#fcf2f8] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
