@@ -223,7 +223,7 @@ const TestimonialCarousel: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-2.5 h-2.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex
                       ? 'bg-[#381c2d] scale-110 sm:scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
