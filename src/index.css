@@ -603,60 +603,128 @@ spline-viewer::part(canvas) {
   }
 }
 
-/* Responsive adjustments for mobile */
+/* ============================================
+   WHY SECTION - RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Tablet landscape and below (1024px) */
 @media (max-width: 1024px) {
   .grid-cols-1.lg\:grid-cols-3 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .h-\[600px\] {
     height: auto;
     min-height: 500px;
   }
 }
 
-/* Mobile adjustments for orbital animation */
+/* Tablet portrait (768px) */
 @media (max-width: 768px) {
+  /* Slow down orbital animation on tablets for better performance */
   .animate-spin-slow {
     animation: spin-slow 30s linear infinite;
   }
-  
+
   /* Optimize mobile scroll performance */
   body {
-    /* Enable momentum scrolling on iOS */
     -webkit-overflow-scrolling: touch;
-    /* Optimize scroll performance */
     scroll-behavior: smooth;
   }
-  
+
   /* Optimize portfolio section for mobile */
   #portfolio {
-    /* Improve scroll performance */
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
   }
-  
+
   /* Optimize project cards for mobile */
   .project-card {
-    /* Enable hardware acceleration */
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    /* Optimize for touch interactions */
     -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Why section cards optimization for tablets */
+  .bg-\[\#fcf2f8\] {
+    /* Ensure proper touch targets (min 44px) */
+    min-height: 520px;
   }
 }
 
-/* Performance optimizations for low-end devices */
+/* Mobile devices (640px and below) */
+@media (max-width: 640px) {
+  /* Optimize orbital animation for mobile */
+  .animate-spin-slow {
+    animation: spin-slow 35s linear infinite;
+  }
+
+  /* Ensure readable text on mobile */
+  body {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* Mobile-specific card adjustments */
+  .bg-\[\#fcf2f8\] {
+    min-height: 480px;
+    /* Add touch feedback */
+    -webkit-tap-highlight-color: rgba(252, 242, 248, 0.3);
+  }
+
+  /* Mobile heading optimization */
+  h2, h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Small mobile devices (480px and below) */
 @media (max-width: 480px) {
-  /* Reduce animations on very small screens */
+  /* Further slow down animations on small devices */
   .animate-pulse-gentle {
     animation-duration: 4s;
   }
-  
+
+  .animate-spin-slow {
+    animation: spin-slow 40s linear infinite;
+  }
+
   /* Optimize transforms for better performance */
   * {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+  }
+
+  /* Ensure touch targets are large enough (WCAG 2.1) */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize text readability on very small screens */
+  body {
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices (320px - minimum support) */
+@media (max-width: 320px) {
+  /* Adjust container padding for very small screens */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Reduce card padding on very small devices */
+  .bg-\[\#fcf2f8\] {
+    padding: 1rem !important;
+  }
+
+  /* Adjust orbital animation size */
+  .animate-spin-slow {
+    max-width: 180px;
+    max-height: 180px;
   }
 }
