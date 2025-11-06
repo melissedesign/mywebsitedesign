@@ -1,30 +1,30 @@
 import React from 'react';
 
 const WhySection: React.FC = () => {
-  // Curated selection of 8 high-impact images from all projects for optimal visual balance
+  // Curated selection of 8 high-impact images from all projects for optimal visual balance - now using Cloudinary CDN
   const orbitalImages = [
-    // ABISS project - 2 key visuals
-    '/images/Abiss/abisswebdesign.png',
-    '/images/Abiss/abisslogodesign.png',
-
-    // Linven project - 2 key visuals
-    '/images/Linven/taglinvenprintdesign.png',
-    '/images/Linven/linvenvisual.png',
-
-    // KōLegal project - 2 key visuals
-    '/images/KoLegal/kolegallogodesign.png',
-    '/images/KoLegal/kolegalprintdesign.png',
-
-    // SUBLEE2 project - 2 key visuals
-    '/images/Sublee/subleelogodesign.png',
-    '/images/Sublee/subleeeventpass.png'
+    // ABISS project - 2 key visuals - optimized
+    '/images/webdesignforabisstokyo.png',
+    '/images/BrandingDesignandLogoforabiss.png',
+    
+    // Linven project - 2 key visuals - optimized
+    '/images/taglinvenprintdesign.png',
+    '/images/linvenvisual.png',
+    
+    // KōLegal project - 2 key visuals - optimized
+    '/images/japaneselawfirm.png',
+    '/images/kolegallogodesign.png',
+    
+    // SUBLEE2 project - 2 key visuals - optimized
+    '/images/subleelogodesign.png',
+    '/images/itcompanyeventpass.png'
   ];
 
   return (
     <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-[1400px] mx-auto">
-
+          
           {/* Section Header - Enhanced with larger font and padding - Reduced top spacing */}
           <div className="text-center mb-12">
             <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-8 py-4 shadow-sm mb-6">
@@ -39,10 +39,10 @@ const WhySection: React.FC = () => {
               </p>
             </div>
           </div>
-
+          
           {/* Three Cards Layout - Exact spacing and proportions */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
+            
             {/* Card 1 - Seamless Collaboration - Updated with Cloudinary CDN */}
             <div className="bg-[#fcf2f8] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
               {/* Image anchored to top - takes up ~65% of card height */}
@@ -56,7 +56,7 @@ const WhySection: React.FC = () => {
                   fetchPriority="high"
                 />
               </div>
-
+              
               {/* Text content at bottom - takes up ~35% with proper padding */}
               <div className="h-[35%] p-8 lg:p-12 flex flex-col justify-center">
                 <h3 className="text-[42px] lg:text-[48px] font-normal text-black mb-4 leading-[1.1] tracking-[-0.02em]">
@@ -80,7 +80,7 @@ const WhySection: React.FC = () => {
                       {orbitalImages.map((image, index) => {
                         const angle = (index * 360) / 8; // Evenly distribute 8 images around circle
                         const radius = 110; // Distance from center
-
+                        
                         return (
                           <div
                             key={index}
@@ -112,7 +112,7 @@ const WhySection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-
+                
                 {/* Bottom text - Updated to reflect curated selection */}
                 <div className="flex items-center justify-center">
                   <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-center">
@@ -133,7 +133,7 @@ const WhySection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-
+                
                 {/* Subtitle content - Right-aligned to match title */}
                 <div className="text-right">
                   <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-right">
