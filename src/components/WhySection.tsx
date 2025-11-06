@@ -125,19 +125,21 @@ const WhySection: React.FC = () => {
               </div>
             </div>
 
-           {/* Card 3 - Modern, Impactful Websites - CENTERED text */}
+           {/* Card 3 - Modern, Impactful Websites - Right-aligned text */}
 <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
-  <div className="flex-1 flex flex-col justify-center items-center">
-    {/* Main headline display - CENTERED */}
-    <div className="text-center mb-6">
-      <h3 className="text-[52px] sm:text-[58px] lg:text-[64px] font-normal text-black leading-[1.1] tracking-[-0.02em]">
-        Modern,<br />responsive<br />websites
-      </h3>
+  <div className="flex-1 flex flex-col">
+    {/* Main headline display - right-aligned to match subtitle */}
+    <div className="flex-1 flex items-center justify-end mb-8">
+      <div className="text-right">
+        <div className="text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
+          Modern,<br />responsive<br />websites
+        </div>
+      </div>
     </div>
 
-    {/* Subtitle content - CENTERED */}
-    <div className="text-center max-w-md">
-      <p className="text-gray-600 text-[16px] leading-[1.6] font-normal">
+    {/* Subtitle content - Right-aligned to match title */}
+    <div className="text-right">
+      <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-right">
         Sleek, functional websites that reflect your brand and convert visitors into clients.
       </p>
     </div>
