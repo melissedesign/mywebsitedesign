@@ -43,7 +43,7 @@ const Features: React.FC = () => {
 
               {/* Explore More Button - Left-aligned on mobile */}
               <div className="mb-6 md:mb-8 flex justify-start">
-                <button className="bg-gray-700 hover:bg-gray-600 text-white font-normal rounded-full transition-all duration-300 border border-transparent hover:border-gray-600 shadow-sm hover:shadow-md text-xs py-2 px-6 md:text-base md:py-3 md:px-6">
+                <button className="bg-[#381c2d] hover:bg-[#4a2438] text-white font-normal rounded-full transition-all duration-300 border border-transparent hover:border-[#4a2438] shadow-sm hover:shadow-md text-xs py-2 px-6 md:text-base md:py-3 md:px-6">
                   Explore More
                 </button>
               </div>
@@ -103,7 +103,7 @@ const Features: React.FC = () => {
 
               {/* Explore More Button - Left-aligned on mobile */}
               <div className="mb-6 md:mb-8 flex justify-start">
-                <button className="bg-gray-700 hover:bg-gray-600 text-white font-normal rounded-full transition-all duration-300 border border-transparent hover:border-gray-600 shadow-sm hover:shadow-md text-xs py-2 px-6 md:text-base md:py-3 md:px-6">
+                <button className="bg-[#381c2d] hover:bg-[#4a2438] text-white font-normal rounded-full transition-all duration-300 border border-transparent hover:border-[#4a2438] shadow-sm hover:shadow-md text-xs py-2 px-6 md:text-base md:py-3 md:px-6">
                   Explore More
                 </button>
               </div>
