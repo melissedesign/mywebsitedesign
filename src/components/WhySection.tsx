@@ -79,10 +79,10 @@ const WhySection: React.FC = () => {
                       {/* 8 images positioned in a perfect circle - larger sizing */}
                       {orbitalImages.map((image, index) => {
                         const angle = (index * 360) / 8;
-                        // Increased radius for larger animation
+                        // Reduced radius for closer spacing between orbital images
                         const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
                         const isTablet = typeof window !== 'undefined' && window.innerWidth >= 640 && window.innerWidth < 768;
-                        const radius = isMobile ? 95 : isTablet ? 120 : 140;
+                        const radius = isMobile ? 70 : isTablet ? 85 : 100;
                         const imageSize = isMobile ? 50 : isTablet ? 55 : 60;
 
                         return (
