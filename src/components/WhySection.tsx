@@ -22,7 +22,7 @@ const WhySection: React.FC = () => {
 
   return (
     <section className="py-16 md:py-20 bg-white">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+      <div className="container mx-auto px-8 sm:px-8 lg:px-12">
          <div className="max-w-[1400px] mx-auto">
           
           {/* Section Header - Enhanced with larger font and padding - Increased mobile spacing */}
