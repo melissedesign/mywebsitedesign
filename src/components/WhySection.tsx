@@ -47,7 +47,7 @@ const WhySection: React.FC = () => {
                 />
               </div>
 
-              <div className="h-[40%] sm:h-[38%] md:h-[35%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+              <div className="h-[40%] sm:h-[38%] md:h-[35%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center md:justify-start md:pt-8 lg:pt-10">
                 <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
