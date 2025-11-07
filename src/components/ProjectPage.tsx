@@ -183,7 +183,7 @@ const ProjectPage: React.FC = () => {
       technologies: ['UX/UI Design', 'Web Design', 'Brand Identity','Adobe Creative Cloud'],
       // Updated hero image for SUBLEE2
       heroImage: '/images/Sublee/heroitcompanydesign.png',
-      heroText: 'Branding for a Tech Company',
+      heroText: 'Branding for a Tech Company.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
         line1: 'Branding for',
