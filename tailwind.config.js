@@ -6,39 +6,39 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          'Inter', 
-          'system-ui', 
-          '-apple-system', 
-          'BlinkMacSystemFont', 
-          'Segoe UI', 
-          'Roboto', 
-          'Helvetica Neue', 
-          'Arial', 
+          'Outfit',
+          'system-ui',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
           'sans-serif'
         ],
-        // Elegant fonts for hero section
+        // Elegant serif for headings and hero
+        'serif': [
+          'Cormorant Garamond',
+          'Georgia',
+          'serif'
+        ],
         'hero': [
-          'Work Sans',
-          'Inter',
-          'system-ui',
-          'sans-serif'
+          'Cormorant Garamond',
+          'Georgia',
+          'serif'
         ],
         'hero-alt': [
-          'DM Sans',
-          'Inter', 
+          'Questrial',
+          'Outfit',
           'system-ui',
           'sans-serif'
         ],
         'elegant': [
-          'Satoshi',
-          'Inter',
+          'Outfit',
           'system-ui',
           'sans-serif'
         ],
         'refined': [
-          'General Sans',
-          'Inter',
-          'system-ui', 
+          'Questrial',
+          'Outfit',
+          'system-ui',
           'sans-serif'
         ]
       },
