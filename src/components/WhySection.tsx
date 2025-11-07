@@ -36,7 +36,7 @@ const WhySection: React.FC = () => {
 
             {/* Card 1 - Seamless Collaboration */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
-              <div className="h-[60%] sm:h-[62%] md:h-[65%] relative">
+              <div className="flex-[0_0_55%] sm:flex-[0_0_58%] md:flex-[0_0_60%] relative">
                 <img
                   src="/images/collaborationfreelanceintokyo.png"
                   alt="Seamless collaboration - Two hands reaching toward each other"
@@ -47,11 +47,11 @@ const WhySection: React.FC = () => {
                 />
               </div>
 
-              <div className="h-[40%] sm:h-[38%] md:h-[35%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center md:justify-start md:pt-8 lg:pt-10">
-                <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
+              <div className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-start pt-8 md:pt-10 lg:pt-12">
+                <h3 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
-                <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal">
+                <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.6] font-normal">
                   Smooth and transparent process from vision to delivery.
                 </p>
               </div>
@@ -59,9 +59,9 @@ const WhySection: React.FC = () => {
 
             {/* Card 2 - Orbital Animation */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
-              <div className="flex-1 flex flex-col">
-                <div className="flex-1 flex items-center justify-center mb-6 sm:mb-8">
-                  <div className="relative w-[240px] h-[240px] sm:w-[300px] sm:h-[300px] md:w-[350px] md:h-[350px]">
+              <div className="flex-1 flex flex-col justify-between">
+                <div className="flex-1 flex items-center justify-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px]">
+                  <div className="relative w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] md:w-[320px] md:h-[320px]">
                     <div className="absolute inset-0 animate-spin-slow">
                       {orbitalImages.map((image, index) => {
                         const angle = (index * 360) / 8;
@@ -100,21 +100,21 @@ const WhySection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center">
-                  <p className="text-gray-600 text-[16px] sm:text-[17px] md:text-[18px] lg:text-[19px] leading-[1.5] font-normal text-center">
+                <div className="flex items-center justify-center pt-4 pb-2">
+                  <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.6] font-normal text-center">
                     Over 65+ visuals crafted
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Card 3 - Modern Responsive Websites - FIXED VERSION */}
+            {/* Card 3 - Modern Responsive Websites */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden p-6 sm:p-8 md:p-10 lg:p-12 min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
-              <div className="flex-1 flex flex-col justify-end">
+              <div className="flex-1 flex flex-col justify-end pb-2 md:pb-4">
                 {/* Main headline - Right-aligned, black text matching Card 1 style */}
-                <div className="mb-4 sm:mb-6">
+                <div className="mb-4 sm:mb-5 md:mb-6">
                   <div className="text-right">
-                    <h3 className="text-[38px] sm:text-[44px] md:text-[50px] lg:text-[56px] font-normal text-black leading-[1.1] tracking-[-0.02em] break-words">
+                    <h3 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-normal text-black leading-[1.1] tracking-[-0.02em]">
                       Modern,<br />responsive<br />websites
                     </h3>
                   </div>
@@ -122,7 +122,7 @@ const WhySection: React.FC = () => {
 
                 {/* Subtitle - Right-aligned, matching Card 1 paragraph style */}
                 <div className="text-right">
-                  <p className="text-gray-600 text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] leading-[1.5] font-normal break-words">
+                  <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.6] font-normal">
                     Sleek, functional websites that reflect your brand and convert visitors into clients.
                   </p>
                 </div>
