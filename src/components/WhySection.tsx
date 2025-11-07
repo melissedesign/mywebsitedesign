@@ -61,7 +61,7 @@ const WhySection: React.FC = () => {
             </div>
 
             {/* Card 2 - Optimized Circular Orbit Animation with 8 curated images */}
-            <div className="bg-[#fef7e6] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
+            <div className="bg-[#d3d99d] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col">
                 {/* Circular orbit animation container */}
                 <div className="flex-1 flex items-center justify-center mb-8">
