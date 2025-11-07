@@ -106,10 +106,10 @@ const About: React.FC = () => {
                 </p>
               </div>
               
-              {/* Paragraph - Center-aligned but justified text for readability */}
-              <div 
+              {/* Paragraph - Justified text for readability */}
+              <div
                 ref={paragraphRef}
-                className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 text-center"
+                className="text-gray-600 text-base md:text-lg leading-relaxed mb-6 md:mb-8 text-justify"
               >
                 {words.map((word, index) => (
                   <span
