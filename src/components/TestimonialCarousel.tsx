@@ -234,21 +234,6 @@ const TestimonialCarousel: React.FC = () => {
   ))}
 </div>
 ```
-<div className="flex justify-center mt-6 md:mt-8 gap-3">
-  {testimonials.map((_, index) => (
-    <button
-      key={index}
-      onClick={() => goToSlide(index)}
-      style={{ width: '12px', height: '12px' }}
-      className={`rounded-full transition-all duration-300 transform-none scale-100 ${
-        index === currentIndex
-          ? 'bg-[#5A1717]'
-          : 'bg-gray-300 hover:bg-gray-400'
-      }`}
-      aria-label={`Go to testimonial ${index + 1}`}
-    />
-  ))}
-</div>
             {/* Mobile Swipe Hint - Shows only on first visit */}
             <div className="md:hidden text-center mt-4">
               <p className="text-xs text-gray-400">
