@@ -36,7 +36,7 @@ const WhySection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             
             {/* Card 1 - Seamless Collaboration - Updated with Cloudinary CDN */}
-            <div className="bg-[#ffebeb] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
+            <div className="bg-[#fcf2f8] rounded-[32px] overflow-hidden h-[600px] flex flex-col">
               {/* Image anchored to top - takes up ~65% of card height */}
               <div className="h-[65%] relative">
                 <img
@@ -61,7 +61,7 @@ const WhySection: React.FC = () => {
             </div>
 
             {/* Card 2 - Optimized Circular Orbit Animation with 8 curated images */}
-            <div className="bg-[#ffebeb] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
+            <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col">
                 {/* Circular orbit animation container */}
                 <div className="flex-1 flex items-center justify-center mb-8">
@@ -115,7 +115,7 @@ const WhySection: React.FC = () => {
             </div>
 
             {/* Card 3 - Modern, Impactful Websites - Right-aligned text */}
-            <div className="bg-[#ffebeb] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
+            <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col justify-end pb-4">
                 {/* Main headline display - right-aligned to match subtitle */}
                 <div className="mb-4">
