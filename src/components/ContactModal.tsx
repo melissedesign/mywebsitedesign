@@ -276,7 +276,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* Service Dropdown - FIXED */}
-            <div>
+            <div className="relative z-50">
               <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Service Interest <span className="text-red-500">*</span>
               </label>

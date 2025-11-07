@@ -226,11 +226,11 @@ const ContactPage: React.FC = () => {
                   </div>
 
                   {/* Service Dropdown - FIXED Z-INDEX */}
-                  <div>
+                  <div className="relative z-50">
                     <label className="block text-lg font-medium text-gray-700 mb-3">
                       Service Interest <span className="text-red-500">*</span>
                     </label>
-                    <div className="relative z-40" ref={dropdownRef}>
+                    <div className="relative" ref={dropdownRef}>
                       <button
                         type="button"
                         onClick={handleDropdownToggle}
@@ -245,7 +245,7 @@ const ContactPage: React.FC = () => {
                       
                       {/* Dropdown - FIXED WITH HIGHER Z-INDEX */}
                       {isDropdownOpen && (
-                        <div className="absolute w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                        <div className="absolute w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-[100] overflow-hidden">
                           {services.map((service, index) => (
                             <button
                               key={service.value}
