@@ -249,11 +249,6 @@ const TestimonialCarousel: React.FC = () => {
     />
   ))}
 </div>
-
-Use inline style for size (width: 12px, height: 12px) instead of Tailwind classes.
-Add transform-none and scale-100 to prevent any scaling issues.
-Change active color to bg-[#5A1717] to match your brand.
-
             {/* Mobile Swipe Hint - Shows only on first visit */}
             <div className="md:hidden text-center mt-4">
               <p className="text-xs text-gray-400">
