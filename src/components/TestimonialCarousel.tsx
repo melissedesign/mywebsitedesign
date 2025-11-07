@@ -233,7 +233,6 @@ const TestimonialCarousel: React.FC = () => {
     />
   ))}
 </div>
-```
             {/* Mobile Swipe Hint - Shows only on first visit */}
             <div className="md:hidden text-center mt-4">
               <p className="text-xs text-gray-400">
