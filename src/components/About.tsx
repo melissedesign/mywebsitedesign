@@ -130,17 +130,17 @@ const About: React.FC = () => {
             </div>
           </div>
 
-          {/* Cards - Enhanced mobile spacing and typography with justified text and center alignment */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-center">
+          {/* Cards - Enhanced mobile spacing and typography with justified text */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-white/50">
-              <h4 className="text-lg md:text-xl font-medium text-[#5A1717] mb-3 md:mb-4">My Approach</h4>
-              <p className="text-gray-600 text-sm md:text-base text-center">
+              <h4 className="text-lg md:text-xl font-medium text-[#5A1717] mb-3 md:mb-4 text-center">My Approach</h4>
+              <p className="text-gray-600 text-sm md:text-base text-justify">
                 I focus on designing websites that are both visually refined and strategically effective. Each element is thoughtfully crafted to align with your business objectives, ensuring your website delivers meaningful results.
               </p>
             </div>
             <div className="bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-2xl shadow-sm border border-white/50">
-              <h4 className="text-lg md:text-xl font-medium text-[#5A1717] mb-3 md:mb-4">Work Process</h4>
-              <p className="text-gray-600 text-sm md:text-base text-center">
+              <h4 className="text-lg md:text-xl font-medium text-[#5A1717] mb-3 md:mb-4 text-center">Work Process</h4>
+              <p className="text-gray-600 text-sm md:text-base text-justify">
                 From initial concept to final launch, I maintain clear communication and attention to detail. Your project is handled with care, ensuring a smooth and efficient development process.
               </p>
             </div>
