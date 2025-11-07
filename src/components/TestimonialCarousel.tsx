@@ -234,26 +234,6 @@ const TestimonialCarousel: React.FC = () => {
   ))}
 </div>
 ```
-
----
-
-## 📋 **CE QUI CHANGE:**
-
-| Avant | Après |
-|-------|-------|
-| `w-2 h-2 md:w-3 md:h-3` (Tailwind) | `style={{ width: '12px', height: '12px' }}` (inline) |
-| `gap-2 md:gap-3` | `gap-3` (fixe) |
-| `bg-[#381c2d]` | `bg-[#5A1717]` (ta couleur brand) |
-| (pas de transform) | `transform-none scale-100` (force pas de scaling) |
-
----
-
-## 🎯 **PROMPT POUR BOLT.NEW:**
-```
-In TestimonialCarousel.tsx, fix the navigation dots size on mobile (line 229-238):
-
-The dots are appearing huge on mobile. Replace the dots section with this exact code:
-
 <div className="flex justify-center mt-6 md:mt-8 gap-3">
   {testimonials.map((_, index) => (
     <button
