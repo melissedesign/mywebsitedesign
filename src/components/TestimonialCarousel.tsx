@@ -148,7 +148,7 @@ const TestimonialCarousel: React.FC = () => {
           <div className="text-center mb-8 md:mb-12">
             <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-6 md:px-8 py-3 md:py-4 shadow-sm">
               <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-700">
-                Testimonials
+                Social Proof
               </h2>
             </div>
           </div>
