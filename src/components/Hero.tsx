@@ -48,9 +48,9 @@ const Hero: React.FC = () => {
           <div className="flex flex-col items-center justify-center text-center">
             <div className="max-w-5xl mx-auto space-y-4 md:space-y-6">
               <h1 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95] tracking-tight font-sans">
-                <span className="text-black font-light">Grow. Engage. </span>
+                <span className="text-white font-light">Grow. Engage. </span>
                 <span
-                  className={`text-[#5A1717] font-light transition-all duration-600 ease-in-out inline-block ${
+                  className={`text-white font-light transition-all duration-600 ease-in-out inline-block ${
                     isAnimating ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
                   }`}
                 >
@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               </h1>
 
               <div className="max-w-4xl mx-auto">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-black leading-relaxed font-sans font-light">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white leading-relaxed font-sans font-light">
                   Attract clients by elevating your brand.
                 </p>
               </div>
