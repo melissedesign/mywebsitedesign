@@ -11,7 +11,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const firstFocusableRef = useRef<HTMLButtonElement>(null);
   const lastFocusableRef = useRef<HTMLButtonElement>(null);
 
-  // Form state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,7 +18,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     service: ''
   });
 
-  // UI state
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
@@ -30,7 +28,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     { value: 'branding-communication', label: 'Branding & Communication' }
   ];
 
-  // Reset form when modal opens
   useEffect(() => {
     if (isOpen) {
       setFormData({ name: '', email: '', message: '', service: '' });
@@ -40,16 +37,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  // Handle page behavior and focus management
   useEffect(() => {
     if (!isOpen) return;
 
-    // Store original body overflow style
     const originalBodyOverflow = document.body.style.overflow;
     const originalBodyPosition = document.body.style.position;
     const originalBodyWidth = document.body.style.width;
     
-    // Disable scrolling behind the modal
     document.body.style.overflow = 'hidden';
     document.body.style.position = 'fixed';
     document.body.style.width = '100%';
@@ -60,7 +54,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         return;
       }
 
-      // Tab key navigation within modal
       if (e.key === 'Tab') {
         const focusableElements = modalRef.current?.querySelectorAll(
           'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"]):not([disabled])'
@@ -87,28 +80,24 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
     document.addEventListener('keydown', handleKeyDown);
     
-    // Focus first element when modal opens
     setTimeout(() => {
       firstFocusableRef.current?.focus();
     }, 100);
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      // Restore normal page scrolling when modal is closed
       document.body.style.overflow = originalBodyOverflow;
       document.body.style.position = originalBodyPosition;
       document.body.style.width = originalBodyWidth;
     };
   }, [isOpen, onClose]);
 
-  // Handle backdrop click
   const handleBackdropClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) {
       onClose();
     }
   };
 
-  // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -117,7 +106,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }));
   };
 
-  // Handle service selection
   const handleServiceSelect = (service: { value: string; label: string }) => {
     setFormData(prev => ({
       ...prev,
@@ -126,18 +114,15 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setIsDropdownOpen(false);
   };
 
-  // Submit form to Formspree
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Basic validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim() || !formData.service) {
       setSubmitStatus('error');
       setErrorMessage('Please fill in all fields.');
       return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setSubmitStatus('error');
@@ -167,10 +152,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      // Success - show success message
       setSubmitStatus('success');
       
-      // Auto-close modal after 2 seconds
       setTimeout(() => {
         onClose();
       }, 2000);
@@ -184,7 +167,6 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
   };
 
-  // Handle Calendly link click
   const handleCalendlyClick = () => {
     window.open('https://cal.com/themelissedesign/discoverycall', '_blank', 'noopener,noreferrer');
   };
@@ -195,46 +177,23 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-[9999]"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 9999,
-        background: 'rgba(0, 0, 0, 0.8)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '1rem'
-      }}
+      className="fixed inset-0 z-[9999] bg-black bg-opacity-80 flex items-center justify-center p-4"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
-      aria-describedby="contact-modal-description"
     >
       <div 
         ref={modalRef}
-        className="relative bg-white rounded-xl shadow-2xl overflow-hidden w-full"
-        style={{
-          maxWidth: '500px',
-          width: '100%',
-          height: 'auto',
-          maxHeight: '90vh',
-          margin: 0,
-          padding: 0,
-          transform: 'none'
-        }}
+        className="relative bg-white rounded-xl shadow-2xl w-full max-w-md max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button - Top Right Corner */}
+        {/* Close Button */}
         <button
           ref={firstFocusableRef}
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#5A1717] focus:ring-offset-2 z-10"
-          aria-label="Close contact form"
+          className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors z-10"
+          aria-label="Close"
         >
           <X className="w-5 h-5 text-gray-500" />
         </button>
@@ -244,52 +203,43 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           <h2 id="contact-modal-title" className="text-2xl font-semibold text-gray-800">
             Get In Touch
           </h2>
-          <p id="contact-modal-description" className="text-gray-600 mt-2">
+          <p className="text-gray-600 mt-2 text-sm">
             Let's discuss your project and bring your vision to life
           </p>
         </div>
 
-        {/* Content - Scrollable area */}
-        <div 
-          className="overflow-y-auto px-6"
-          style={{ 
-            maxHeight: 'calc(90vh - 160px)',
-            overflowY: 'auto',
-            WebkitOverflowScrolling: 'touch'
-          }}
-        >
+        {/* Scrollable Content */}
+        <div className="overflow-y-auto px-6 flex-1">
           {/* Success Message */}
           {submitStatus === 'success' && (
-            <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
-              <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+            <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg flex items-start">
+              <CheckCircle className="w-5 h-5 text-green-600 mr-2 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-green-800 font-medium">Message sent successfully!</p>
-                <p className="text-green-700 text-sm">Thank you for reaching out. We will get back to you soon.</p>
+                <p className="text-green-800 font-medium text-sm">Message sent!</p>
+                <p className="text-green-700 text-xs">We'll get back to you soon.</p>
               </div>
             </div>
           )}
 
           {/* Error Message */}
           {submitStatus === 'error' && (
-            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
-              <AlertCircle className="w-5 h-5 text-red-600 mr-3 flex-shrink-0" />
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-start">
+              <AlertCircle className="w-5 h-5 text-red-600 mr-2 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-red-800 font-medium">Error sending message</p>
-                <p className="text-red-700 text-sm">{errorMessage}</p>
+                <p className="text-red-800 font-medium text-sm">Error</p>
+                <p className="text-red-700 text-xs">{errorMessage}</p>
               </div>
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* 1. Name Field */}
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Your Name <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <User className="w-5 h-5 text-gray-400" />
-                </div>
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
                   id="name"
@@ -297,22 +247,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-2.5 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 disabled:opacity-50"
                   placeholder="Enter your name"
                   required
                 />
               </div>
             </div>
 
-            {/* 2. Email Field */}
+            {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
                 Your Email <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                  <Mail className="w-5 h-5 text-gray-400" />
-                </div>
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="email"
                   id="email"
@@ -320,16 +268,16 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-2.5 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 disabled:opacity-50"
                   placeholder="Enter your email"
                   required
                 />
               </div>
             </div>
 
-            {/* 3. Service Interest Dropdown */}
-            <div className="relative">
-              <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+            {/* Service Dropdown - FIXED */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1.5">
                 Service Interest <span className="text-red-500">*</span>
               </label>
               <div className="relative">
@@ -337,23 +285,23 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-between text-base text-left"
+                  className="w-full bg-gray-50 text-left rounded-lg py-2.5 px-3 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#5A1717] disabled:opacity-50 flex items-center justify-between"
                 >
-                  <span className={selectedService ? 'text-gray-900' : 'text-gray-500'}>
+                  <span className={selectedService ? 'text-gray-900' : 'text-gray-400'}>
                     {selectedService ? selectedService.label : 'Select a service'}
                   </span>
-                  <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - Now appears ABOVE other content */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-[100] max-h-48 overflow-y-auto">
                     {services.map((service) => (
                       <button
                         key={service.value}
                         type="button"
                         onClick={() => handleServiceSelect(service)}
-                        className="w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors first:rounded-t-lg last:rounded-b-lg text-base"
+                        className="w-full text-left px-3 py-2.5 hover:bg-gray-50 transition-colors text-sm text-gray-900 first:rounded-t-lg last:rounded-b-lg"
                       >
                         {service.label}
                       </button>
@@ -363,15 +311,13 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* 4. Message Field */}
+            {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
                 What your brand is currently missing? <span className="text-red-500">*</span>
               </label>
               <div className="relative">
-                <div className="absolute top-3 left-3 pointer-events-none">
-                  <MessageSquare className="w-5 h-5 text-gray-400" />
-                </div>
+                <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
                 <textarea
                   id="message"
                   name="message"
@@ -379,8 +325,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   onChange={handleInputChange}
                   disabled={isSubmitting}
                   rows={4}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed resize-vertical text-base"
-                  placeholder="Tell us about your project and what you're looking to achieve"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-2.5 pl-10 pr-3 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 disabled:opacity-50 resize-none"
+                  placeholder="Tell us about your project"
                   required
                 />
               </div>
@@ -388,21 +334,19 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           </form>
         </div>
 
-        {/* Footer with Three Buttons */}
-        <div className="flex items-center gap-3 px-6 py-4 border-t border-gray-100 bg-gray-50">
-          {/* Cancel Button */}
+        {/* Footer */}
+        <div className="flex items-center gap-2 px-6 py-4 border-t border-gray-100 bg-gray-50">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-gray-700 bg-white hover:bg-gray-100 rounded-lg transition-colors font-medium border border-gray-200 text-sm"
+            className="px-4 py-2 text-sm text-gray-700 bg-white hover:bg-gray-100 rounded-lg transition-colors font-medium border border-gray-200"
           >
             Cancel
           </button>
 
-          {/* Send Message Button */}
           <button
             onClick={handleSubmit}
             disabled={isSubmitting || submitStatus === 'success' || !formData.name.trim() || !formData.email.trim() || !formData.message.trim() || !formData.service}
-            className="flex-1 px-4 py-2 bg-[#5A1717] text-white rounded-lg hover:bg-[#4a1515] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center text-sm"
+            className="flex-1 px-4 py-2 text-sm bg-[#5A1717] text-white rounded-lg hover:bg-[#4a1515] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
           >
             {isSubmitting ? (
               <>
@@ -419,12 +363,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             )}
           </button>
           
-          {/* Video Call Button */}
           <button
             ref={lastFocusableRef}
             onClick={handleCalendlyClick}
             disabled={isSubmitting}
-            className="px-3 py-2 bg-white hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed border border-gray-200"
+            className="p-2 bg-white hover:bg-gray-100 rounded-lg transition-colors disabled:opacity-50 border border-gray-200"
             aria-label="Book a call"
           >
             <Video className="w-4 h-4 text-gray-700" />
