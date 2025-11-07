@@ -217,21 +217,62 @@ const TestimonialCarousel: React.FC = () => {
               </div>
             </div>
 
-            {/* Navigation Dots - Responsive sizing for mobile and desktop */}
-            <div className="flex justify-center mt-6 md:mt-8 gap-2 md:gap-3">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? 'bg-[#381c2d]'
-                      : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
+           {/* Navigation Dots - Fixed mobile size */}
+<div className="flex justify-center mt-6 md:mt-8 gap-3">
+  {testimonials.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => goToSlide(index)}
+      style={{ width: '12px', height: '12px' }}
+      className={`rounded-full transition-all duration-300 transform-none scale-100 ${
+        index === currentIndex
+          ? 'bg-[#5A1717]'
+          : 'bg-gray-300 hover:bg-gray-400'
+      }`}
+      aria-label={`Go to testimonial ${index + 1}`}
+    />
+  ))}
+</div>
+```
+
+---
+
+## 📋 **CE QUI CHANGE:**
+
+| Avant | Après |
+|-------|-------|
+| `w-2 h-2 md:w-3 md:h-3` (Tailwind) | `style={{ width: '12px', height: '12px' }}` (inline) |
+| `gap-2 md:gap-3` | `gap-3` (fixe) |
+| `bg-[#381c2d]` | `bg-[#5A1717]` (ta couleur brand) |
+| (pas de transform) | `transform-none scale-100` (force pas de scaling) |
+
+---
+
+## 🎯 **PROMPT POUR BOLT.NEW:**
+```
+In TestimonialCarousel.tsx, fix the navigation dots size on mobile (line 229-238):
+
+The dots are appearing huge on mobile. Replace the dots section with this exact code:
+
+<div className="flex justify-center mt-6 md:mt-8 gap-3">
+  {testimonials.map((_, index) => (
+    <button
+      key={index}
+      onClick={() => goToSlide(index)}
+      style={{ width: '12px', height: '12px' }}
+      className={`rounded-full transition-all duration-300 transform-none scale-100 ${
+        index === currentIndex
+          ? 'bg-[#5A1717]'
+          : 'bg-gray-300 hover:bg-gray-400'
+      }`}
+      aria-label={`Go to testimonial ${index + 1}`}
+    />
+  ))}
+</div>
+
+Use inline style for size (width: 12px, height: 12px) instead of Tailwind classes.
+Add transform-none and scale-100 to prevent any scaling issues.
+Change active color to bg-[#5A1717] to match your brand.
 
             {/* Mobile Swipe Hint - Shows only on first visit */}
             <div className="md:hidden text-center mt-4">
