@@ -1,23 +1,15 @@
 import React from 'react';
 
 const WhySection: React.FC = () => {
-  // Curated selection of 8 high-impact images from all projects for optimal visual balance - now using Cloudinary CDN
   const orbitalImages = [
-    // ABISS project - 2 key visuals - optimized
-    '/images/webdesignforabisstokyo.png',
-    '/images/BrandingDesignandLogoforabiss.png',
-    
-    // Linven project - 2 key visuals - optimized
-    '/images/taglinvenprintdesign.png',
-    '/images/linvenvisual.png',
-    
-    // KōLegal project - 2 key visuals - optimized
-    '/images/japaneselawfirm.png',
-    '/images/kolegallogodesign.png',
-    
-    // SUBLEE2 project - 2 key visuals - optimized
-    '/images/subleelogodesign.png',
-    '/images/itcompanyeventpass.png'
+    '/images/Abiss/abisswebdesign.png',
+    '/images/Abiss/abisslogodesign.png',
+    '/images/Linven/taglinvenprintdesign.png',
+    '/images/Linven/linvenvisual.png',
+    '/images/KoLegal/kolegallogodesign.png',
+    '/images/KoLegal/kolegalprintdesign.png',
+    '/images/Sublee/subleelogodesign.png',
+    '/images/Sublee/subleeeventpass.png'
   ];
 
   return (
@@ -124,9 +116,9 @@ const WhySection: React.FC = () => {
 
             {/* Card 3 - Modern, Impactful Websites - Right-aligned text */}
             <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
-              <div className="flex-1 flex flex-col">
+              <div className="flex-1 flex flex-col justify-end pb-4">
                 {/* Main headline display - right-aligned to match subtitle */}
-                <div className="flex-1 flex items-center justify-end mb-6 sm:mb-8">
+                <div className="mb-4">
                   <div className="text-right">
                     <div className="text-[48px] sm:text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
                       Modern,<br />responsive<br />websites
