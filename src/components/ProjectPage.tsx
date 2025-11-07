@@ -155,7 +155,7 @@ const ProjectPage: React.FC = () => {
       solution: 'The logo design embraces minimalism with clean lines and subtle details that reflect simplicity and precision, conveying authority and reliability. The typography selection emphasizes modern professionalism, enhancing the brand\'s clear and elegant communication style. A rich brown color palette was carefully chosen to evoke warmth, stability, and trust, aligning perfectly with the firm\'s commitment to professionalism and integrity.',
       results: 'The minimalist brand identity successfully positions KōLegal as a modern, trustworthy law firm while honoring its Japanese heritage. The clean design system and sophisticated color palette effectively communicate the firm\'s values of precision, reliability, and professionalism, resonating strongly with their target audience.',
       technologies: ['Brand Identity', 'Logo Design', 'Typography', 'Print Design', 'Adobe Creative Cloud'],
-      heroImage: '/images/KoLegal/kolegallogodesign.png',
+      heroImage: '/images/KoLegal/kolegalinside.png',
       heroText: 'KōLegal, a modern Japanese law firm.',
       // Mobile-optimized hero text with better line breaks and proper grammar
       heroTextMobile: {
