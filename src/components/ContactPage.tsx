@@ -157,7 +157,7 @@ const ContactPage: React.FC = () => {
                       Send Another Message
                     </button>
                     <div className="text-center">
-                      
+                      <a
                         href="https://cal.com/themelissedesign/discoverycall"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -230,7 +230,7 @@ const ContactPage: React.FC = () => {
                     <label className="block text-lg font-medium text-gray-700 mb-3">
                       Service Interest <span className="text-red-500">*</span>
                     </label>
-                    <div className="relative" ref={dropdownRef}>
+                    <div className="relative z-40" ref={dropdownRef}>
                       <button
                         type="button"
                         onClick={handleDropdownToggle}
@@ -245,7 +245,7 @@ const ContactPage: React.FC = () => {
                       
                       {/* Dropdown - FIXED WITH HIGHER Z-INDEX */}
                       {isDropdownOpen && (
-                        <div className="absolute w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-[1000] overflow-hidden">
+                        <div className="absolute w-full mt-2 bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
                           {services.map((service, index) => (
                             <button
                               key={service.value}
@@ -313,7 +313,7 @@ const ContactPage: React.FC = () => {
                   Or
                 </h2>
                 <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-2 py-1 shadow-sm">
-                  
+                  <a
                     href="https://cal.com/themelissedesign/discoverycall"
                     target="_blank"
                     rel="noopener noreferrer"
