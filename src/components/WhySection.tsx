@@ -56,13 +56,13 @@ const WhySection: React.FC = () => {
                   fetchPriority="high"
                 />
               </div>
-              
+
               {/* Text content at bottom - takes up ~35% with proper padding */}
               <div className="h-[35%] p-8 lg:p-12 flex flex-col justify-center">
-                <h3 className="text-[42px] lg:text-[48px] font-normal text-black mb-4 leading-[1.1] tracking-[-0.02em]">
+                <h3 className="text-[36px] sm:text-[42px] lg:text-[48px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
-                <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-justify">
+                <p className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.5] font-normal text-justify">
                   Smooth and transparent process from vision to delivery.
                 </p>
               </div>
@@ -126,17 +126,17 @@ const WhySection: React.FC = () => {
             <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col">
                 {/* Main headline display - right-aligned to match subtitle */}
-                <div className="flex-1 flex items-center justify-end mb-8">
+                <div className="flex-1 flex items-center justify-end mb-6 sm:mb-8">
                   <div className="text-right">
-                    <div className="text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
+                    <div className="text-[48px] sm:text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
                       Modern,<br />responsive<br />websites
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Subtitle content - Right-aligned to match title */}
                 <div className="text-right">
-                  <p className="text-gray-600 text-[16px] leading-[1.5] font-normal text-right">
+                  <p className="text-gray-600 text-[15px] sm:text-[16px] leading-[1.5] font-normal text-right">
                     Sleek, functional websites that reflect your brand and convert visitors into clients.
                   </p>
                 </div>
