@@ -21,13 +21,13 @@ const TestimonialCarousel: React.FC = () => {
       id: 1,
       quote: "I asked Melisse to help me in April 2025 and have been totally satisfied. Top visual quality, innovative spirit for the contents too, and also reactivity and easy to work with. I highly recommend Melisse for any communication support that you may need.",
       name: "François-Xavier LIENHART",
-      role: "Executive Coach (ICC – INSEAD), with prior experience as CEO in Japan"
+      role: "Executive Coach (ICC – INSEAD), with prior experience as CEO in Japan."
     },
     {
       id: 2,
       quote: "Themelissedesign was very professional and attentive during my time working with them for the design of my brand. They have done a great job at creating the modern logos and architecture of my website. We will definitely use their services again.",
       name: "Ozmoze.ai",
-      role: "Founder"
+      role: "Founder."
     }
   ];
 
