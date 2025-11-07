@@ -138,7 +138,7 @@ const TestimonialCarousel: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10 md:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-2">
-              What clients say
+              Social proof
             </h2>
             <p className="text-gray-500 text-sm md:text-base">
               Trusted by professionals worldwide
