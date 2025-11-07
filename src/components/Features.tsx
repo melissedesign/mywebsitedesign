@@ -31,7 +31,7 @@ const Features: React.FC = () => {
                 </span>
               </div>
 
-              {/* Main Title - Updated to match "Modern, responsive websites" style */}
+              {/* Main Title - Updated to match "Modern responsive websites" style */}
               <h3 className="text-[24px] md:text-[28px] lg:text-[32px] font-light text-gray-800 mb-3 md:mb-4 leading-tight">
                 Web Design
               </h3>
@@ -91,7 +91,7 @@ const Features: React.FC = () => {
                 </span>
               </div>
 
-              {/* Main Title - Updated to match "Modern, responsive websites" style */}
+              {/* Main Title - Updated to match "Modern responsive websites" style */}
               <h3 className="text-[24px] md:text-[28px] lg:text-[32px] font-light text-gray-800 mb-3 md:mb-4 leading-tight">
                 Branding & Communication
               </h3>
