@@ -46,7 +46,6 @@ const TestimonialCarousel: React.FC = () => {
     goToSlide(newIndex);
   };
 
-  // Touch/Mouse event handlers
   const handleStart = (clientX: number) => {
     setIsDragging(true);
     setStartX(clientX);
@@ -67,23 +66,19 @@ const TestimonialCarousel: React.FC = () => {
     
     setIsDragging(false);
     const diff = currentX - startX;
-    const threshold = 50; // Minimum distance to trigger slide change
+    const threshold = 50;
     
     if (Math.abs(diff) > threshold) {
       if (diff > 0) {
-        // Swiped right - go to previous
         goToPrevious();
       } else {
-        // Swiped left - go to next
         goToNext();
       }
     } else {
-      // Snap back to current slide
       setTranslateX(-currentIndex * 100);
     }
   };
 
-  // Mouse events
   const handleMouseDown = (e: React.MouseEvent) => {
     e.preventDefault();
     handleStart(e.clientX);
@@ -104,7 +99,6 @@ const TestimonialCarousel: React.FC = () => {
     handleEnd();
   };
 
-  // Touch events
   const handleTouchStart = (e: React.TouchEvent) => {
     handleStart(e.touches[0].clientX);
   };
@@ -117,14 +111,12 @@ const TestimonialCarousel: React.FC = () => {
     handleEnd();
   };
 
-  // Reset translateX when currentIndex changes (for button navigation)
   useEffect(() => {
     if (!isDragging) {
       setTranslateX(-currentIndex * 100);
     }
   }, [currentIndex, isDragging]);
 
-  // Prevent text selection during drag
   useEffect(() => {
     if (isDragging) {
       document.body.style.userSelect = 'none';
@@ -143,43 +135,40 @@ const TestimonialCarousel: React.FC = () => {
   return (
     <section id="testimonials" className="py-12 md:py-16 lg:py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header - Optimized mobile typography */}
-          <div className="text-center mb-8 md:mb-12">
-            <div className="inline-block bg-white border border-[#FBEAEA] rounded-full px-6 md:px-8 py-3 md:py-4 shadow-sm">
-              <h2 className="text-lg md:text-2xl lg:text-3xl font-medium text-gray-700">
-                Social Proof
-              </h2>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10 md:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-2">
+              What clients say
+            </h2>
+            <p className="text-gray-500 text-sm md:text-base">
+              Trusted by professionals worldwide
+            </p>
           </div>
 
-          {/* Carousel Container */}
           <div className="relative">
-            {/* Navigation Arrows - Hidden on mobile to encourage swiping */}
             <button
               onClick={goToPrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 lg:-translate-x-16 z-10 bg-white hover:bg-gray-50 rounded-full p-2 lg:p-3 shadow-lg transition-all duration-300 hidden md:block"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="w-6 h-6 text-[#5A1717]" />
+              <ChevronLeft className="w-5 h-5 text-gray-700" />
             </button>
 
             <button
               onClick={goToNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 rounded-full p-3 shadow-lg transition-all duration-300 hover:shadow-xl hidden md:block"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 lg:translate-x-16 z-10 bg-white hover:bg-gray-50 rounded-full p-2 lg:p-3 shadow-lg transition-all duration-300 hidden md:block"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="w-6 h-6 text-[#5A1717]" />
+              <ChevronRight className="w-5 h-5 text-gray-700" />
             </button>
 
-            {/* Testimonial Cards Container with Touch Support */}
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden">
               <div 
                 ref={carouselRef}
                 className={`flex transition-transform ${isDragging ? 'duration-0' : 'duration-700'} ease-in-out cursor-grab active:cursor-grabbing select-none`}
                 style={{ 
                   transform: `translateX(${translateX}%)`,
-                  touchAction: 'pan-y pinch-zoom' // Allow vertical scrolling but handle horizontal
+                  touchAction: 'pan-y pinch-zoom'
                 }}
                 onMouseDown={handleMouseDown}
                 onMouseMove={handleMouseMove}
@@ -192,24 +181,33 @@ const TestimonialCarousel: React.FC = () => {
                 {testimonials.map((testimonial) => (
                   <div
                     key={testimonial.id}
-                    className="w-full flex-shrink-0 px-2 md:px-4"
+                    className="w-full flex-shrink-0 px-2 sm:px-3"
                   >
-                    <div className="bg-white rounded-2xl p-6 md:p-8 lg:p-12 relative shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-                      {/* Quote - Optimized mobile typography */}
-                      <div className="text-center mb-6 md:mb-8">
-                        <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed italic text-justify">
-                          "{testimonial.quote}"
-                        </p>
+                    <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+                      
+                      <div className="mb-4 sm:mb-6">
+                        <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                        </svg>
                       </div>
 
-                      {/* Author Info - Optimized mobile typography */}
-                      <div className="flex flex-col items-center">
-                        <h4 className="text-base md:text-lg font-medium text-[#5A1717] mb-1 md:mb-2 text-center">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-gray-600 text-center text-xs md:text-sm">
-                          {testimonial.role}
-                        </p>
+                      <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed font-light mb-6 sm:mb-8">
+                        {testimonial.quote}
+                      </p>
+
+                      <div className="flex items-center gap-3 sm:gap-4 pt-4 sm:pt-6 border-t border-gray-200">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#381c2d] to-[#5A1717] flex items-center justify-center text-white font-medium text-xs sm:text-sm flex-shrink-0">
+                          {testimonial.name.split(' ').map(n => n[0]).join('')}
+                        </div>
+                        
+                        <div className="min-w-0">
+                          <h4 className="font-medium text-gray-900 text-sm sm:text-base md:text-lg truncate">
+                            {testimonial.name}
+                          </h4>
+                          <p className="text-xs sm:text-sm text-gray-500 line-clamp-2">
+                            {testimonial.role}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -217,10 +215,26 @@ const TestimonialCarousel: React.FC = () => {
               </div>
             </div>
 
-            {/* Mobile Swipe Hint - Shows only on first visit */}
-            <div className="md:hidden text-center mt-4">
-              <p className="text-xs text-gray-400">
-              </p>
+            <div className="flex justify-center mt-6 sm:mt-8 gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className="group focus:outline-none"
+                  aria-label={`Go to testimonial ${index + 1}`}
+                >
+                  <div 
+                    className={`h-1 rounded-full transition-all duration-300 ${
+                      index === currentIndex
+                        ? 'w-8'
+                        : 'w-8 bg-gray-300 group-hover:bg-gray-400'
+                    }`}
+                    style={{
+                      backgroundColor: index === currentIndex ? '#381c2d' : undefined
+                    }}
+                  />
+                </button>
+              ))}
             </div>
           </div>
         </div>
