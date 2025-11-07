@@ -36,7 +36,7 @@ const WhySection: React.FC = () => {
 
             {/* Card 1 - Seamless Collaboration */}
             <div className="bg-[#fcf2f8] rounded-[24px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden min-h-[480px] sm:min-h-[520px] md:h-[600px] flex flex-col">
-              <div className="flex-[0_0_55%] sm:flex-[0_0_58%] md:flex-[0_0_60%] relative">
+              <div className="h-[50%] sm:h-[52%] md:h-[54%] relative">
                 <img
                   src="/images/collaborationfreelanceintokyo.png"
                   alt="Seamless collaboration - Two hands reaching toward each other"
@@ -47,8 +47,8 @@ const WhySection: React.FC = () => {
                 />
               </div>
 
-              <div className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-start pt-8 md:pt-10 lg:pt-12">
-                <h3 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-normal text-black mb-3 sm:mb-4 leading-[1.1] tracking-[-0.02em]">
+              <div className="h-[50%] sm:h-[48%] md:h-[46%] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-start pt-6 sm:pt-8 md:pt-10">
+                <h3 className="text-[32px] sm:text-[38px] md:text-[44px] lg:text-[48px] font-normal text-black mb-3 sm:mb-4 md:mb-5 leading-[1.1] tracking-[-0.02em]">
                   Seamless<br />collaboration
                 </h3>
                 <p className="text-gray-600 text-[14px] sm:text-[15px] md:text-[16px] leading-[1.6] font-normal">
