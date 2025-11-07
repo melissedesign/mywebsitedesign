@@ -218,14 +218,14 @@ const TestimonialCarousel: React.FC = () => {
             </div>
 
             {/* Navigation Dots - Responsive sizing for mobile and desktop */}
-            <div className="flex justify-center mt-6 md:mt-1 gap-3 sm:gap-3">
+            <div className="flex justify-center mt-6 md:mt-8 gap-2 md:gap-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-300 ${
+                  className={`w-3 h-3 md:w-4 md:h-4 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-[#381c2d] scale-90 sm:scale-100'
+                      ? 'bg-[#381c2d]'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
