@@ -297,7 +297,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   value={formData.name}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
                   placeholder="Enter your name"
                   required
                 />
@@ -320,7 +320,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed text-base"
                   placeholder="Enter your email"
                   required
                 />
@@ -328,7 +328,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             </div>
 
             {/* 3. Service Interest Dropdown */}
-            <div>
+            <div className="relative">
               <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
                 Service Interest <span className="text-red-500">*</span>
               </label>
@@ -337,17 +337,17 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   type="button"
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   disabled={isSubmitting}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-between text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-between text-base text-left"
                 >
                   <span className={selectedService ? 'text-gray-900' : 'text-gray-500'}>
                     {selectedService ? selectedService.label : 'Select a service'}
                   </span>
                   <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
-                
+
                 {/* Dropdown Menu */}
                 {isDropdownOpen && (
-                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                     {services.map((service) => (
                       <button
                         key={service.value}
@@ -379,7 +379,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   onChange={handleInputChange}
                   disabled={isSubmitting}
                   rows={4}
-                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed resize-vertical text-base"
+                  className="w-full bg-gray-50 text-gray-900 rounded-lg py-3 pl-11 pr-4 focus:outline-none focus:ring-2 focus:ring-[#5A1717] border border-gray-200 focus:border-[#5A1717] disabled:opacity-50 disabled:cursor-not-allowed resize-vertical text-base"
                   placeholder="Tell us about your project and what you're looking to achieve"
                   required
                 />
