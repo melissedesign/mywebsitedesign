@@ -114,16 +114,16 @@ const About: React.FC = () => {
                 {words.map((word, index) => (
                   <span
                     key={index}
-                    className={`inline-block mr-2 transition-all duration-700 ease-out ${
-                      isVisible 
-                        ? 'opacity-100 translate-y-0' 
+                    className={`inline transition-all duration-700 ease-out ${
+                      isVisible
+                        ? 'opacity-100 translate-y-0'
                         : 'opacity-0 translate-y-4'
                     }`}
                     style={{
                       transitionDelay: isVisible ? `${index * 50}ms` : '0ms'
                     }}
                   >
-                    {word}
+                    {word}{' '}
                   </span>
                 ))}
               </div>
