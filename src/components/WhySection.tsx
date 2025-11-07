@@ -114,14 +114,14 @@ const WhySection: React.FC = () => {
               </div>
             </div>
 
-            {/* Card 3 - Modern Impactful Websites - Right-aligned text */}
+            {/* Card 3 - Modern, Impactful Websites - Right-aligned text */}
             <div className="bg-[#fcf2f8] rounded-[32px] p-8 lg:p-12 h-[600px] flex flex-col">
               <div className="flex-1 flex flex-col justify-end pb-4">
                 {/* Main headline display - right-aligned to match subtitle */}
                 <div className="mb-4">
                   <div className="text-right">
                     <div className="text-[48px] sm:text-[64px] lg:text-[72px] font-normal text-black leading-[0.9] tracking-[-0.03em]">
-                      Modern,<br />responsive<br />websites
+                      Modern<br />Responsive<br />Websites
                     </div>
                   </div>
                 </div>
